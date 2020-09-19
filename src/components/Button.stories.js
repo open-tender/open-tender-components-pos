@@ -1,15 +1,30 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import React from 'react'
 
-import Button from "./Button";
+import Button from './Button'
 
-export const text = "Hello Button";
+export default {
+  title: 'Button',
+  component: Button,
+  // argTypes: {
+  //   backgroundColor: { control: 'color' },
+  // },
+}
 
-export const actions = {
-  onClick: action("onClick"),
-};
+const Template = (args) => <Button {...args} />
 
-storiesOf("Button", module).add("default", () => (
-  <Button text={text} {...actions} />
-));
+export const Primary = Template.bind({})
+Primary.args = {
+  text: 'Primary Button',
+}
+
+export const Small = Template.bind({})
+Small.args = {
+  text: 'Small Button',
+  size: 'small',
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  text: 'Large Button',
+  size: 'large',
+}
