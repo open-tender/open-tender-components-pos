@@ -1,5 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import './greeting.scss'
 
 const Greeting = ({ title, children }) => {
   return (

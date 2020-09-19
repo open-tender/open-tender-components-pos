@@ -1,0 +1,62 @@
+@import '../../App.scss';
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 72rem;
+  margin: 0 0 8rem;
+  text-align: center;
+
+  p {
+    font-size: $font-size-big;
+  }
+
+  &__title {
+    font-size: $font-size-mega;
+    font-weight: 400;
+  }
+
+  &__loader {
+    margin: 2rem 0 0;
+  }
+
+  &__button {
+    margin: 4rem 0 0;
+
+    .btn {
+      font-size: $font-size-x-big;
+    }
+  }
+
+  &__error {
+    @extend %mono-font;
+    margin: 4rem 0 0;
+
+    h2 {
+      font-family: inherit;
+      font-size: $font-size-h4;
+      margin-bottom: 2rem;
+    }
+
+    &__messages {
+      margin: 3rem 0 0;
+    }
+  }
+
+  .logo {
+    margin: 0 0 1rem;
+  }
+
+  &__content {
+    margin: 2rem 0 0;
+
+    p {
+      margin: 0 0 1rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
