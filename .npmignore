@@ -1,0 +1,8 @@
+/dist/bundle_sizes.html
+/node_modules
+/src
+.babelrc
+.gitignore
+.prettierrc
+yarn.lock
+yarn-error.log

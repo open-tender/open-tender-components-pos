@@ -3,20 +3,20 @@ import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from './GlobalStyles'
 import { theme } from './utils'
-import { Greeting } from './components'
-import './App.scss'
+import { GreetingNew } from './components'
+// import './components/App.scss'
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className="app">
-        <Greeting title="Open Tender Component Library">
+        <GreetingNew title="Open Tender Component Library">
           <p>
             A set of reusable components used in the Open Tender POS and KDS
             apps.
           </p>
-        </Greeting>
+        </GreetingNew>
       </div>
     </ThemeProvider>
   )

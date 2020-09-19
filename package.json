@@ -1,18 +1,27 @@
 {
-  "name": "open-tender-components-pos",
+  "name": "@open-tender/components-pos",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+  "description": "A component library built for use with the Open Tender open source web app",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "author": "JC Harrington <jc@opentender.io> (https://www.opentender.io)",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/open-tender/open-tender-components-pos",
+  "bugs": "https://github.com/open-tender/open-tender-components-pos/issues",
+  "repository": {
+    "url": "https://github.com/open-tender/open-tender-components-pos",
+    "type": "git"
   },
+  "dependencies": {},
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -34,7 +43,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@storybook/addon-actions": "^6.0.21",
@@ -43,9 +55,15 @@
     "@storybook/node-logger": "^6.0.21",
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.21",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "babel-loader": "^8.1.0",
     "emotion-theming": "^10.0.27",
     "node-sass": "^4.14.1",
-    "react-is": "^16.13.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-scripts": "3.4.3"
   }
 }

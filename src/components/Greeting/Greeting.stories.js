@@ -1,9 +1,9 @@
 import React from 'react'
-import { Greeting } from './'
+import { GreetingNew } from './'
 
 export default {
   title: 'Components/Greeting',
-  component: Greeting,
+  component: GreetingNew,
 }
 
 // export const greeting = () => {
@@ -14,12 +14,17 @@ export default {
 //   )
 // }
 
-const Template = (args) => <Greeting {...args} />
+const Template = (args) => <GreetingNew {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
   title: 'Primary Greeting',
-  children: <p>Here's where the content will go.</p>,
+  children: (
+    <>
+      <p>Here's where the content will go.</p>
+      <p>Here's where the content will go.</p>
+    </>
+  ),
 }
 
 // export const Small = Template.bind({})

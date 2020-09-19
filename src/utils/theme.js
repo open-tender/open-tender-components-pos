@@ -40,12 +40,21 @@ export const theme = {
   },
   fonts: {
     body: {
-      family: "'Roboto', sans-serif",
+      fontFamily: "'Roboto', Georgia",
       fontWeight: '400',
       fontStyle: 'normal',
       color: colors.primary,
       letterSpacing: '0.04em',
       fontSize: fontSizes.medium,
+    },
+    sizes: {
+      mega: '4.8rem',
+      h1: '3.0rem',
+      h2: '2.6rem',
+      h3: '2.2rem',
+      h4: '2.0rem',
+      h5: '1.8rem',
+      h6: '1.6rem',
     },
   },
   borderRadius: {
