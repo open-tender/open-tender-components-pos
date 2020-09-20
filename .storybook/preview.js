@@ -1,6 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
-import GlobalStyles from '../src/GlobalStyles'
+import { GlobalStyles, Main, Content } from '../src'
 import { theme } from '../src/utils'
 import '../src/App.scss'
 
@@ -11,7 +11,11 @@ export const decorators = [
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className="app">
-        <Story />
+        <Main>
+          <Content>
+            <Story />
+          </Content>
+        </Main>
       </div>
     </ThemeProvider>
   ),

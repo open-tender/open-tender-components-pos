@@ -31,6 +31,10 @@ const backgroundGradient = `linear-gradient(
   );`
 
 export const theme = {
+  layout: {
+    headerHeight: '7.5rem',
+    padding: '3.0rem',
+  },
   backgrounds: {
     bg1: bg1,
     bg2: bg2,
@@ -55,6 +59,7 @@ export const theme = {
       h4: '2.0rem',
       h5: '1.8rem',
       h6: '1.6rem',
+      ...fontSizes,
     },
   },
   borderRadius: {
