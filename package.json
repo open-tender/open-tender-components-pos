@@ -1,6 +1,6 @@
 {
   "name": "@open-tender/components-pos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A component library built for use with the Open Tender open source web app",
   "main": "dist/index.js",
   "module": "dist/index.js",
