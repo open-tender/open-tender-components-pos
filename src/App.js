@@ -4,7 +4,6 @@ import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from './GlobalStyles'
 import { theme } from './utils'
 import { GreetingNew } from './components'
-// import './components/App.scss'
 
 const App = () => {
   return (

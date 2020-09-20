@@ -22,7 +22,6 @@ Primary.args = {
   children: (
     <>
       <p>Here's where the content will go.</p>
-      <p>Here's where the content will go.</p>
     </>
   ),
 }

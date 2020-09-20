@@ -1,6 +1,7 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
 import { withTheme } from 'emotion-theming'
+import { theme } from './utils'
 import AkkuratEot from './fonts/lineto-akkuratmono-regular.eot'
 import AkkuratWoff from './fonts/lineto-akkuratmono-regular.woff'
 import AkkuratWoff2 from './fonts/lineto-akkuratmono-regular.woff2'
@@ -190,8 +191,9 @@ const makeGlobalStyles = (theme) => css`
   }
 `
 
-const GlobalStyles = withTheme(({ theme }) => (
-  <Global styles={makeGlobalStyles(theme)} />
-))
+const GlobalStyles = withTheme(({ theme }) => {
+  console.log('theme', theme)
+  return <Global styles={makeGlobalStyles(theme)} />
+})
 
 export default GlobalStyles
