@@ -1,15 +1,10 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
 import { withTheme } from 'emotion-theming'
-import AkkuratEot from './fonts/lineto-akkuratmono-regular.eot'
-import AkkuratWoff from './fonts/lineto-akkuratmono-regular.woff'
-import AkkuratWoff2 from './fonts/lineto-akkuratmono-regular.woff2'
-import Roboto400Woff2 from './fonts/roboto-v20-latin-regular.woff2'
-import Roboto400Woff from './fonts/roboto-v20-latin-regular.woff'
-import Roboto500Woff2 from './fonts/roboto-v20-latin-500.woff2'
-import Roboto500Woff from './fonts/roboto-v20-latin-500.woff'
 
 // https://stackoverflow.com/questions/51637950/enable-global-theming-with-emotion
+// how to inject fonts - WASN'T WORKING IN CONSUMING APP
+// https://github.com/emotion-js/emotion/issues/984
 
 const makeGlobalStyles = (theme) => css`
   html {
@@ -118,33 +113,6 @@ const makeGlobalStyles = (theme) => css`
     pointer-events: none;
   }
 
-  @font-face {
-    font-family: 'Akkurat Mono';
-    font-weight: normal;
-    font-style: normal;
-    src: url(${AkkuratEot});
-    src: url(${AkkuratEot}) format('embedded-opentype'),
-      url(${AkkuratWoff2}) format('woff2'), url(${AkkuratWoff}) format('woff');
-  }
-
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'),
-      url(${Roboto400Woff2}) format('woff2'),
-      url(${Roboto400Woff}) format('woff');
-  }
-
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Roboto Medium'), local('Roboto-Medium'),
-      url(${Roboto500Woff2}) format('woff2'),
-      url(${Roboto500Woff}) format('woff');
-  }
-
   html,
   body,
   #root {
@@ -191,7 +159,6 @@ const makeGlobalStyles = (theme) => css`
 `
 
 const GlobalStyles = withTheme(({ theme }) => {
-  console.log('theme', theme)
   return <Global styles={makeGlobalStyles(theme)} />
 })
 

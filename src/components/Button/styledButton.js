@@ -1,7 +1,5 @@
 import styled from '@emotion/styled'
 import isPropValid from '@emotion/is-prop-valid'
-import { isObjectEmpty } from '../../utils/helpers'
-import { theme as defaultTheme } from '../../utils/theme'
 
 const StyledButton = ({
   size = 'medium',
@@ -10,10 +8,6 @@ const StyledButton = ({
   theme,
   style = {},
 }) => {
-  if (isObjectEmpty(theme)) {
-    theme = defaultTheme
-  }
-
   return {
     cursor: 'pointer',
     display: 'inline-block',
