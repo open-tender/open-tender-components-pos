@@ -4,11 +4,11 @@ import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from './GlobalStyles'
 import { theme } from './utils'
 import { GreetingNew } from './components'
+import Theme from './Theme'
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
+    <Theme>
       <div className="app">
         <GreetingNew title="Open Tender Component Library">
           <p>
@@ -17,7 +17,7 @@ const App = () => {
           </p>
         </GreetingNew>
       </div>
-    </ThemeProvider>
+    </Theme>
   )
 }
 

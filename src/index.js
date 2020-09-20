@@ -1,5 +1,6 @@
-import GlobalStyles from './GlobalStyles'
 import { theme } from './utils'
+import GlobalStyles from './GlobalStyles'
+import Theme from './Theme'
 
 export * from './components'
-export { GlobalStyles, theme }
+export { theme, GlobalStyles, Theme }
