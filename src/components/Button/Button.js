@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 const ButtonStyled = styled('button')`
   cursor: pointer;
   display: inline-block;
-  line-height: 1;
+  line-height: 0.9;
   text-align: center;
   border: 0;
   margin: 0;

@@ -137,8 +137,13 @@ const makeGlobalStyles = (theme) => css`
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    background: ${theme.backgrounds.bg3};
-    background: ${theme.backgrounds.bgGradient};
+    background: ${theme.colors.bg3};
+    background: ${theme.gradients.primary};
+  }
+
+  a {
+    text-decoration: none;
+    color: ${theme.fonts.body.color};
   }
 
   @keyframes slide-up {

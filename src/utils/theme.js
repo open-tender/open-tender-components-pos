@@ -35,12 +35,21 @@ export const theme = {
     headerHeight: '7.5rem',
     padding: '3.0rem',
   },
-  backgrounds: {
+  transition: 'all 0.15s ease',
+  borderRadius: {
+    small: '0.5rem',
+    medium: '1rem',
+    large: '1.5rem',
+  },
+  colors: {
     bg1: bg1,
     bg2: bg2,
     bg3: bg3,
     bg4: bg4,
-    bgGradient: backgroundGradient,
+    border: '#444958',
+  },
+  gradients: {
+    primary: backgroundGradient,
   },
   fonts: {
     body: {
@@ -62,12 +71,6 @@ export const theme = {
       ...fontSizes,
     },
   },
-  borderRadius: {
-    small: '0.5rem',
-    medium: '1rem',
-    large: '1.5rem',
-  },
-  transition: 'all 0.15s ease',
   buttons: {
     sizes: {
       small: {
