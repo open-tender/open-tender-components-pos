@@ -141,6 +141,12 @@ const makeGlobalStyles = (theme) => css`
     background: ${theme.gradients.primary};
   }
 
+  a,
+  button {
+    outline: none;
+    transition: ${theme.transition};
+  }
+
   a {
     text-decoration: none;
     color: ${theme.fonts.body.color};

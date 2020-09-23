@@ -1,4 +1,5 @@
 import React from 'react'
+import { FlexCentered } from '../FlexCentered'
 import { Greeting } from './'
 
 export default {
@@ -6,7 +7,11 @@ export default {
   component: Greeting,
 }
 
-const Template = (args) => <Greeting {...args} />
+const Template = (args) => (
+  <FlexCentered>
+    <Greeting {...args} />
+  </FlexCentered>
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

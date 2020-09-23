@@ -9,14 +9,14 @@ export const fontSizes = {
 }
 
 export const colors = {
+  bg1: '#090a0a',
+  bg2: '#17191f',
+  bg3: '#21252e',
+  bg4: '#353945',
   primary: '#ffffff',
+  link: '#5a5aff',
   error: '#eb2d5a',
 }
-
-const bg1 = '#090a0a'
-const bg2 = '#17191f'
-const bg3 = '#21252e'
-const bg4 = '#353945'
 
 // const bg1 = '#090a0a'
 // const bg2 = '#121233'
@@ -25,27 +25,27 @@ const bg4 = '#353945'
 
 const backgroundGradient = `linear-gradient(
     0deg,
-    ${bg3} 0%,
-    ${bg3} 85%,
-    ${bg2} 100%
+    ${colors.bg3} 0%,
+    ${colors.bg3} 85%,
+    ${colors.bg2} 100%
   );`
 
 export const theme = {
+  transition: 'all 0.15s ease',
   layout: {
     headerHeight: '7.5rem',
     padding: '3.0rem',
   },
-  transition: 'all 0.15s ease',
   borderRadius: {
     small: '0.5rem',
     medium: '1rem',
     large: '1.5rem',
   },
   colors: {
-    bg1: bg1,
-    bg2: bg2,
-    bg3: bg3,
-    bg4: bg4,
+    bg1: colors.bg1,
+    bg2: colors.bg2,
+    bg3: colors.bg3,
+    bg4: colors.bg4,
     border: '#444958',
   },
   gradients: {
@@ -89,7 +89,11 @@ export const theme = {
     colors: {
       primary: {
         color: colors.primary,
-        backgroundColor: bg4,
+        backgroundColor: colors.bg4,
+      },
+      active: {
+        color: colors.primary,
+        backgroundColor: colors.link,
       },
       error: {
         color: colors.primary,

@@ -15,9 +15,15 @@ const InfoListItem = styled('li')`
 `
 
 const InFoList = ({ items }) => {
-  return items.map((item, index) => (
-    <InfoListItem key={`info-${index}`}>{item}</InfoListItem>
-  ))
+  return (
+    <div>
+      <ul>
+        {items.map((item, index) => (
+          <InfoListItem key={`info-${index}`}>{item}</InfoListItem>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 InFoList.displayName = 'InFoList'
