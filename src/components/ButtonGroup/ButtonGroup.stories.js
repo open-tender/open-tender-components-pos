@@ -16,7 +16,9 @@ Primary.args = {
   children: (
     <>
       {buttons.map((i) => (
-        <Button onClick={() => console.log(`${i} was clicked!`)}>{i}</Button>
+        <Button key={i} onClick={() => console.log(`${i} was clicked!`)}>
+          {i}
+        </Button>
       ))}
     </>
   ),
@@ -28,7 +30,11 @@ Small.args = {
   children: (
     <>
       {buttons.map((i) => (
-        <Button size="small" onClick={() => console.log(`${i} was clicked!`)}>
+        <Button
+          key={i}
+          size="small"
+          onClick={() => console.log(`${i} was clicked!`)}
+        >
           {i}
         </Button>
       ))}

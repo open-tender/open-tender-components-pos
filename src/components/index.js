@@ -1,5 +1,7 @@
 export * from './Main'
 export * from './Modal'
+export * from './Alerts'
+export * from './Notifications'
 export * from './Content'
 export * from './Header'
 export * from './ButtonGroup'

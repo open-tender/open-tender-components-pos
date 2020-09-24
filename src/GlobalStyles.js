@@ -189,6 +189,26 @@ const makeGlobalStyles = (theme) => css`
       transform: translateY(0);
     }
   }
+
+  .flash-enter {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  .flash-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .flash-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .flash-exit-active {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
 `
 
 const GlobalStyles = withTheme(({ theme }) => {

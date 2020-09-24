@@ -48,6 +48,8 @@ export const theme = {
     bg4: colors.bg4,
     text: colors.primary,
     border: '#444958',
+    link: colors.link,
+    error: colors.error,
     overlay: 'rgba(0, 0, 0, 0.8)',
   },
   backgrounds: {
