@@ -61,7 +61,9 @@ Button.propTypes = {
   ]),
   disabled: propTypes.bool,
   onClick: propTypes.func,
-  className: propTypes.string,
+  size: propTypes.string,
+  color: propTypes.string,
+  style: propTypes.object,
 }
 
 export default Button

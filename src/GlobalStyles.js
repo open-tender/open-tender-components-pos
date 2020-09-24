@@ -138,7 +138,7 @@ const makeGlobalStyles = (theme) => css`
     width: 100%;
     height: 100%;
     background: ${theme.colors.bg3};
-    background: ${theme.gradients.primary};
+    background: ${theme.backgrounds.main};
   }
 
   a,
@@ -166,6 +166,28 @@ const makeGlobalStyles = (theme) => css`
   .slide-up {
     opacity: 0;
     animation: slide-up 0.25s ease-in-out 0.125s forwards;
+  }
+
+  .md-enter,
+  .md-exit.md-exit-active {
+    transition: all 0.25s ease;
+    opacity: 0;
+    visibility: hidden;
+
+    & > div {
+      transition: all 0.25s ease;
+      transform: translateY(10%);
+    }
+  }
+
+  .md-enter.md-enter-active,
+  .md-exit {
+    opacity: 1;
+    visibility: visible;
+
+    & > div {
+      transform: translateY(0);
+    }
   }
 `
 

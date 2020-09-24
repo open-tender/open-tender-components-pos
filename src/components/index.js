@@ -1,4 +1,5 @@
 export * from './Main'
+export * from './Modal'
 export * from './Content'
 export * from './Header'
 export * from './ButtonGroup'

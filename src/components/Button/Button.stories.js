@@ -6,9 +6,6 @@ export default {
   title: 'Components/Button',
   component: Button,
   parameters: { actions: { argTypesRegex: '^on.*' } },
-  // argTypes: {
-  //   backgroundColor: { control: 'color' },
-  // },
 }
 
 const Template = (args) => <Button {...args} />

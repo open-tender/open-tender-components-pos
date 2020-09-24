@@ -46,20 +46,30 @@ export const theme = {
     bg2: colors.bg2,
     bg3: colors.bg3,
     bg4: colors.bg4,
+    text: colors.primary,
     border: '#444958',
+    overlay: 'rgba(0, 0, 0, 0.8)',
   },
-  gradients: {
-    primary: backgroundGradient,
+  backgrounds: {
+    main: backgroundGradient,
   },
   fonts: {
     body: {
-      fontFamily: "'Roboto', Georgia",
+      fontFamily: "'Roboto', sans-serif",
       fontWeight: '400',
       fontStyle: 'normal',
-      color: colors.primary,
       letterSpacing: '0.04em',
+      color: colors.primary,
       fontSize: fontSizes.medium,
     },
+    headings: {
+      fontFamily: "'Roboto', sans-serif",
+      fontWeight: '500',
+      fontStyle: 'normal',
+      lineHeight: '1.0',
+      letterSpacing: '0.04em',
+    },
+    headingsStyle: `font-family: 'Roboto', sans-serif; font-weight: 500; font-style: normal; line-height: 1.0; letter-spacing: 0.04em;`,
     sizes: {
       mega: '4.8rem',
       h1: '3.0rem',
@@ -94,6 +104,10 @@ export const theme = {
       active: {
         color: colors.primary,
         backgroundColor: colors.link,
+      },
+      dark: {
+        color: colors.primary,
+        backgroundColor: colors.bg3,
       },
       error: {
         color: colors.primary,
