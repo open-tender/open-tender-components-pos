@@ -16,6 +16,7 @@ export const colors = {
   primary: '#ffffff',
   link: '#5a5aff',
   error: '#eb2d5a',
+  errorDark: '#430d15',
 }
 
 // const bg1 = '#090a0a'
@@ -51,6 +52,7 @@ export const theme = {
     border: '#444958',
     link: colors.link,
     error: colors.error,
+    errorDark: colors.errorDark,
     overlay: 'rgba(0, 0, 0, 0.8)',
   },
   backgrounds: {
@@ -73,6 +75,12 @@ export const theme = {
       letterSpacing: '0.04em',
     },
     headingsStyle: `font-family: 'Roboto', sans-serif; font-weight: 500; font-style: normal; line-height: 1.0; letter-spacing: 0.04em;`,
+    mono: {
+      fontFamily: "'Akkurat Mono', monospace;",
+      fontWeight: '400',
+      fontStyle: 'normal',
+      letterSpacing: '0.04em',
+    },
     sizes: {
       mega: '4.8rem',
       h1: '3.0rem',

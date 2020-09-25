@@ -9,10 +9,13 @@ const Page = styled('div')`
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  ${(props) =>
+    props.isError ? `background-color: ${props.theme.colors.errorDark}` : null}
 `
 
 Page.displayName = 'Page'
 Page.propTypes = {
+  isError: propTypes.bool,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

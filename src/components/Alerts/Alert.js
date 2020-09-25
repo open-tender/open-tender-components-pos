@@ -23,12 +23,6 @@ const AlertContainer = styled('li')`
   }
 `
 
-const AlertFlexContainer = styled('span')`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
 const AlertIcon = styled('span')`
   position: relative;
   top: 0rem;
@@ -42,12 +36,10 @@ const Alert = ({ message, dismiss }) => {
   return (
     <AlertContainer>
       <Button onClick={dismiss}>
-        <AlertFlexContainer>
-          <span>{message}</span>
-          <AlertIcon>
-            <X size={null} />
-          </AlertIcon>
-        </AlertFlexContainer>
+        <span>{message}</span>
+        <AlertIcon>
+          <X size={20} />
+        </AlertIcon>
       </Button>
     </AlertContainer>
   )

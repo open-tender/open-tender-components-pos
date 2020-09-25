@@ -25,6 +25,9 @@ const GreetingContent = styled('div')`
   p:last-child {
     margin: 0;
   }
+  p + button {
+    margin: 2rem 0 0;
+  }
 `
 
 const Greeting = ({ title, children }) => {

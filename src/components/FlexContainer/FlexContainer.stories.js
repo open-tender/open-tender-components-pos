@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '..'
+import { FlexCentered, Header } from '..'
 import { FlexContainer } from '.'
 
 export default {
@@ -7,7 +7,11 @@ export default {
   component: FlexContainer,
 }
 
-const Template = (args) => <FlexContainer {...args} />
+const Template = (args) => (
+  <FlexCentered>
+    <FlexContainer {...args} />
+  </FlexCentered>
+)
 
 export const Standalone = Template.bind({})
 Standalone.args = {

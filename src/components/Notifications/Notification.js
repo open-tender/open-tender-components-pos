@@ -12,7 +12,7 @@ const NotificationContainer = styled('li')`
   text-align: center;
   transition: all 0.25s ease;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
-  font-size: ${(props) => props.theme.fonts.sizes.xsmall};
+  font-size: ${(props) => props.theme.fonts.sizes.small};
   border-radius: ${(props) => props.theme.borderRadius.small};
   background-color: ${(props) => props.theme.colors.link};
 `

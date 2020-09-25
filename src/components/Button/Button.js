@@ -17,11 +17,17 @@ const ButtonStyled = styled('button')`
   background-color: ${(props) =>
     props.theme.buttons.colors[props.color].backgroundColor};
   transition: ${(props) => props.theme.transition};
+
+  & span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 const Button = ({
   text,
-  ariaLabel,
+  label,
   children,
   disabled,
   onClick,
@@ -39,14 +45,14 @@ const Button = ({
   return (
     <ButtonStyled
       type="button"
-      aria-label={ariaLabel || text || null}
+      aria-label={label || text || null}
       onPointerUp={(evt) => onUp(evt)}
       disabled={disabled}
       size={size}
       color={color}
       style={style}
     >
-      {children || text}
+      <span>{children || text}</span>
     </ButtonStyled>
   )
 }
@@ -54,7 +60,7 @@ const Button = ({
 Button.displayName = 'Button'
 Button.propTypes = {
   text: propTypes.string,
-  ariaLabel: propTypes.string,
+  label: propTypes.string,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

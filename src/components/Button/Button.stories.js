@@ -1,6 +1,6 @@
 import React from 'react'
-
-import Button from './Button'
+import { FlexCentered } from '..'
+import { Button } from '.'
 
 export default {
   title: 'Components/Button',
@@ -8,7 +8,11 @@ export default {
   parameters: { actions: { argTypesRegex: '^on.*' } },
 }
 
-const Template = (args) => <Button {...args} />
+const Template = (args) => (
+  <FlexCentered>
+    <Button {...args} />
+  </FlexCentered>
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

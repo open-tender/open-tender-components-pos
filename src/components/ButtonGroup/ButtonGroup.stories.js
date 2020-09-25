@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '..'
+import { FlexCentered, Button } from '..'
 import { ButtonGroup } from '.'
 
 export default {
@@ -9,7 +9,11 @@ export default {
 
 const buttons = ['First', 'Second', 'Third']
 
-const Template = (args) => <ButtonGroup {...args} />
+const Template = (args) => (
+  <FlexCentered>
+    <ButtonGroup {...args} />
+  </FlexCentered>
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

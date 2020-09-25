@@ -130,15 +130,17 @@ const makeGlobalStyles = (theme) => css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    background: ${theme.colors.bg3};
-    background: ${theme.backgrounds.main};
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.fonts.headings.fontFamily};
+    font-weight: ${theme.fonts.headings.fontWeight};
+    font-style: ${theme.fonts.headings.fontStyle};
+    letter-spacing: ${theme.fonts.headings.letterSpacing};
+    line-height: ${theme.fonts.headings.lineHeight};
   }
 
   a,
@@ -150,6 +152,22 @@ const makeGlobalStyles = (theme) => css`
   a {
     text-decoration: none;
     color: ${theme.fonts.body.color};
+  }
+
+  pre {
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: ${theme.colors.bg3};
+    background: ${theme.backgrounds.main};
   }
 
   @keyframes slide-up {

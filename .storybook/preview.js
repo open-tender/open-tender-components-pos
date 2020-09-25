@@ -12,9 +12,7 @@ export const decorators = [
       <GlobalStyles />
       <div className="app">
         <Main>
-          <Content>
-            <Story />
-          </Content>
+          <Story />
         </Main>
       </div>
     </ThemeProvider>
