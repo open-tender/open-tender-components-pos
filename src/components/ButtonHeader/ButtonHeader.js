@@ -8,7 +8,9 @@ const ButtonHeader = ({
   onClick,
   color = 'primary',
   style = {},
+  text,
   label,
+  disabled,
   children,
 }) => {
   const buttonStyle = { ...defaultStyle, ...style }
@@ -18,9 +20,11 @@ const ButtonHeader = ({
       color={color}
       style={buttonStyle}
       onClick={onClick}
-      label={label}
+      text={text}
+      label={text || label}
+      disabled={disabled}
     >
-      {children}
+      {text || children}
     </Button>
   )
 }
@@ -30,7 +34,9 @@ ButtonHeader.propTypes = {
   onClick: propTypes.func,
   color: propTypes.object,
   style: propTypes.object,
+  text: propTypes.string,
   label: propTypes.string,
+  disabled: propTypes.bool,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

@@ -14,6 +14,7 @@ export const colors = {
   bg3: '#21252e',
   bg4: '#353945',
   primary: '#ffffff',
+  secondary: '#979daf',
   link: '#5a5aff',
   error: '#eb2d5a',
   errorDark: '#430d15',
@@ -37,6 +38,7 @@ export const theme = {
     padding: '3.0rem',
     headerHeight: '7.5rem',
     cardWidth: '48rem',
+    gutter: '0.5rem',
   },
   borderRadius: {
     small: '0.5rem',
@@ -49,6 +51,7 @@ export const theme = {
     bg3: colors.bg3,
     bg4: colors.bg4,
     text: colors.primary,
+    textSecondary: colors.secondary,
     border: '#444958',
     link: colors.link,
     error: colors.error,
