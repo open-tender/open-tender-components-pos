@@ -33,8 +33,9 @@ const backgroundGradient = `linear-gradient(
 export const theme = {
   transition: 'all 0.15s ease',
   layout: {
-    headerHeight: '7.5rem',
     padding: '3.0rem',
+    headerHeight: '7.5rem',
+    cardWidth: '48rem',
   },
   borderRadius: {
     small: '0.5rem',
