@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexCentered } from '..'
 import { LoadingLogo } from '.'
+import logo from '../../assets/logo.png'
 
 export default {
   title: 'Components/LoadingLogo',
@@ -14,3 +15,6 @@ const Template = (args) => (
 )
 
 export const Centered = Template.bind({})
+Centered.args = {
+  logo: logo,
+}

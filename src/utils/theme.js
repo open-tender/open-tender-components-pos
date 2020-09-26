@@ -34,6 +34,7 @@ const backgroundGradient = `linear-gradient(
 
 export const theme = {
   transition: 'all 0.15s ease',
+  disabled: '0.25',
   layout: {
     padding: '3.0rem',
     headerHeight: '7.5rem',
@@ -84,6 +85,7 @@ export const theme = {
       fontStyle: 'normal',
       letterSpacing: '0.04em',
     },
+    monoStyle: `font-family: 'Akkurat Mono', monospace; font-weight: 400; font-style: normal; letter-spacing: 0.04em;`,
     sizes: {
       mega: '4.8rem',
       h1: '3.0rem',
@@ -100,14 +102,22 @@ export const theme = {
       small: {
         fontSize: fontSizes.small,
         padding: '0.7em 1.3em',
+        height: 'auto',
       },
       medium: {
         fontSize: fontSizes.medium,
         padding: '0.7em 1.3em',
+        height: 'auto',
       },
       large: {
         fontSize: fontSizes.xlarge,
         padding: '1.1em 0.7em',
+        height: 'auto',
+      },
+      tall: {
+        fontSize: fontSizes.medium,
+        height: '5.5rem',
+        padding: '0 0.7em',
       },
     },
     colors: {

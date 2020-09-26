@@ -2,7 +2,12 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 const ButtonGroup = styled('div')`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   & button {
+    display: block;
     min-width: ${(props) => props.minWidth || '10rem'};
 
     &:not(:first-child) {

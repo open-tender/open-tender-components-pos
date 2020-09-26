@@ -45,6 +45,40 @@ const makeGlobalStyles = (theme) => css`
   textarea,
   select {
     -webkit-appearance: none;
+    width: 100%;
+    line-height: 1;
+    outline: none;
+    padding: 1.6rem 1.75rem 1.5rem;
+    border: 0;
+    border-radius: ${theme.borderRadius.small};
+    font-family: ${theme.fonts.mono.fontFamily};
+    font-size: ${theme.fonts.sizes.large};
+    color: ${theme.colors.text};
+    background-color: ${theme.colors.bg1};
+    transition: ${theme.transition};
+
+    &::placeholder {
+      color: ${theme.colors.text};
+      opacity: 0.5;
+    }
+
+    &::selection {
+      color: ${theme.colors.text};
+      background-color: ${theme.colors.bg3};
+    }
+
+    &:active,
+    &:focus {
+      color: ${theme.colors.text};
+      background-color: ${theme.colors.bg1};
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+      color: ${theme.colors.text};
+      background-color: ${theme.colors.bg1};
+    }
   }
 
   input[type='search'] {
@@ -76,10 +110,19 @@ const makeGlobalStyles = (theme) => css`
   }
 
   select {
-    cursor: pointer;
+    position: relative;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
+  }
+
+  select:read-only {
+    opacity: 1;
+  }
+
+  textarea {
+    height: 5em;
   }
 
   ol,

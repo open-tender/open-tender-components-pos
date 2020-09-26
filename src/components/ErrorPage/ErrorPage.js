@@ -51,6 +51,7 @@ const ErrorPage = ({ error, errorInfo, logError, reload }) => {
           <ErrorDetails>
             <h2>{title}</h2>
             <p>{detail}</p>
+            {eventId && <pre>Event ID: {eventId}</pre>}
             {stackTrace && <pre>{stackTrace}</pre>}
             {messages.length > 0 && (
               <ul>

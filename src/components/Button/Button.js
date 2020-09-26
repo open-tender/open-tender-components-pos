@@ -12,13 +12,15 @@ const ButtonStyled = styled('button')`
   letter-spacing: 0.04rem;
   border-radius: ${(props) => props.theme.borderRadius.small};
   padding: ${(props) => props.theme.buttons.sizes[props.size].padding};
+  height: ${(props) => props.theme.buttons.sizes[props.size].height};
   font-size: ${(props) => props.theme.buttons.sizes[props.size].fontSize};
   color: ${(props) => props.theme.buttons.colors[props.color].color};
   background-color: ${(props) =>
     props.theme.buttons.colors[props.color].backgroundColor};
   transition: ${(props) => props.theme.transition};
+  opacity: ${(props) => (props.disabled ? props.theme.disabled : '1.0')};
 
-  & span {
+  & > span {
     display: flex;
     justify-content: center;
     align-items: center;
