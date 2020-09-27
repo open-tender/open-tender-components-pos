@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 const CartLineItemContainer = styled('span')`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
