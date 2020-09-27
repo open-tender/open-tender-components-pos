@@ -56,6 +56,7 @@ CartLineItem.propTypes = {
   price: propTypes.string,
   size: propTypes.string,
   color: propTypes.string,
+  style: propTypes.object,
 }
 
 export default CartLineItem

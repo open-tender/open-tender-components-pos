@@ -9,8 +9,7 @@
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:@babel/recommended"
+    "plugin:react-hooks/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,7 +18,7 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@babel"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "no-console": "warn",
     "no-unused-vars": "error"

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Numpad } from '.'
 import { FlexCentered } from '..'
+// import { buttonsNumpad, reduceNumpad } from '@open-tender/js'
 
 export default {
   title: 'Components/Numpad',
