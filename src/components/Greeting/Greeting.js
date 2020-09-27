@@ -18,7 +18,9 @@ const GreetingTitle = styled('h1')`
 `
 
 const GreetingContent = styled('div')`
-  margin: 2rem 0 0;
+  h1 + & {
+    margin: 2rem 0 0;
+  }
   p {
     margin: 0 0 1rem;
   }

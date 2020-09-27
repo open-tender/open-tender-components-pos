@@ -33,6 +33,7 @@
     "@babel/preset-react": "^7.10.4",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "@open-tender/js": "^1.1.8",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",

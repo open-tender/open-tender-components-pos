@@ -37,6 +37,7 @@ const Numpad = ({
   setValue,
   reduceValue,
   disabled = false,
+  width = '100%',
 }) => {
   const [input, setInput] = useState(value || '')
   const [clear, setClear] = useState(value ? true : false)
@@ -53,7 +54,7 @@ const Numpad = ({
   }
 
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: width }}>
       <div style={{ margin: '0 0 1rem' }}>
         <input
           value={input || ''}
@@ -90,6 +91,7 @@ Numpad.propTypes = {
   setValue: propTypes.func,
   reduceValue: propTypes.func,
   disabled: propTypes.bool,
+  width: propTypes.string,
 }
 
 export default Numpad
