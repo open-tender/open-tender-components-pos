@@ -58,6 +58,8 @@ export const theme = {
     textSecondary: colors.secondary,
     border: '#444958',
     link: colors.link,
+    success: colors.success,
+    alert: colors.alert,
     error: colors.error,
     errorDark: colors.errorDark,
     overlay: 'rgba(0, 0, 0, 0.8)',

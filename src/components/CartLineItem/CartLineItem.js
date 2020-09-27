@@ -52,7 +52,7 @@ const CartLineItem = ({
 CartLineItem.displayName = 'CartLineItem'
 CartLineItem.propTypes = {
   name: propTypes.string,
-  quantity: propTypes.string,
+  quantity: propTypes.oneOfType([propTypes.string, propTypes.node]),
   price: propTypes.string,
   size: propTypes.string,
   color: propTypes.string,

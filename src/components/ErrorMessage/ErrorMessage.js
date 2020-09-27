@@ -35,7 +35,6 @@ const ErrorMessage = ({ error }) => {
       {messages.length > 0 && (
         <ul>
           {messages.map(([key, message], index) => {
-            console.log(key)
             const field = key.replace('$.', '')
             return (
               <li key={`${key}-${index}`}>

@@ -3,18 +3,18 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Button } from '..'
 
-const NumpadButtons = styled('div')`
+const KeypadButtons = styled('div')`
   width: 100%;
   border-radius: ${(props) => props.theme.borderRadius.small};
   overflow: hidden;
 `
 
-const NumpadRow = styled('div')`
+const KeypadRow = styled('div')`
   width: 100%;
   display: flex;
 `
 
-const NumpadButton = styled('div')`
+const KeypadButton = styled('div')`
   height: ${(props) => props.theme.layout.bigButtonHeight};
   padding: 0 0.1rem 0.1rem 0;
 
@@ -31,13 +31,16 @@ const NumpadButton = styled('div')`
   }
 `
 
-const Numpad = ({
+const Keypad = ({
   buttons,
   value,
   setValue,
   reduceValue,
   disabled = false,
   width = '100%',
+  includeSpacebar = false,
+  buttonColor = 'primary',
+  textAlign = 'left',
 }) => {
   const [input, setInput] = useState(value || '')
   const [clear, setClear] = useState(value ? true : false)
@@ -59,39 +62,63 @@ const Numpad = ({
         <input
           value={input || ''}
           readOnly={true}
-          style={{ textAlign: 'right' }}
+          style={{ textAlign: textAlign }}
         />
       </div>
-      <NumpadButtons>
+      <KeypadButtons>
         {buttons.map((row) => (
-          <NumpadRow key={row.toString()}>
+          <KeypadRow key={row.toString()}>
             {row.map((key) => {
               const style = { width: `${100 / row.length}%` }
               return (
-                <NumpadButton key={key} style={style}>
+                <KeypadButton key={key} style={style}>
                   <Button
                     text={key.toString()}
                     onClick={() => press(key)}
+                    color={buttonColor}
                     disabled={disabled}
                   />
-                </NumpadButton>
+                </KeypadButton>
               )
             })}
-          </NumpadRow>
+          </KeypadRow>
         ))}
-      </NumpadButtons>
+        {includeSpacebar && (
+          <KeypadRow>
+            <KeypadButton style={{ width: `${(8 / 9) * 100}%` }}>
+              <Button
+                text="Space"
+                onClick={() => press('Space')}
+                color={buttonColor}
+                disabled={disabled}
+              />
+            </KeypadButton>
+            <KeypadButton style={{ width: `${(1 / 9) * 100}%` }}>
+              <Button
+                text="."
+                onClick={() => press('.')}
+                color={buttonColor}
+                disabled={disabled}
+              />
+            </KeypadButton>
+          </KeypadRow>
+        )}
+      </KeypadButtons>
     </div>
   )
 }
 
-Numpad.displayName = 'Numpad'
-Numpad.propTypes = {
+Keypad.displayName = 'Keypad'
+Keypad.propTypes = {
   buttons: propTypes.array,
   value: propTypes.string,
   setValue: propTypes.func,
   reduceValue: propTypes.func,
   disabled: propTypes.bool,
   width: propTypes.string,
+  includeSpacebar: propTypes.bool,
+  buttonColor: propTypes.string,
+  textAlign: propTypes.string,
 }
 
-export default Numpad
+export default Keypad

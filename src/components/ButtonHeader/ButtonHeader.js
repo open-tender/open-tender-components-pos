@@ -32,7 +32,7 @@ const ButtonHeader = ({
 ButtonHeader.displayName = 'ButtonHeader'
 ButtonHeader.propTypes = {
   onClick: propTypes.func,
-  color: propTypes.object,
+  color: propTypes.string,
   style: propTypes.object,
   text: propTypes.string,
   label: propTypes.string,
