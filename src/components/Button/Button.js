@@ -14,6 +14,8 @@ const ButtonStyled = styled('button')`
   padding: ${(props) => props.theme.buttons.sizes[props.size].padding};
   height: ${(props) => props.theme.buttons.sizes[props.size].height};
   font-size: ${(props) => props.theme.buttons.sizes[props.size].fontSize};
+  text-transform: ${(props) =>
+    props.theme.buttons.sizes[props.size].textTransform || 'none'};
   color: ${(props) => props.theme.buttons.colors[props.color].color};
   background-color: ${(props) =>
     props.theme.buttons.colors[props.color].backgroundColor};
@@ -24,6 +26,7 @@ const ButtonStyled = styled('button')`
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 1.2;
   }
 `
 

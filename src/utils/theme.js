@@ -18,6 +18,8 @@ export const colors = {
   link: '#5a5aff',
   error: '#eb2d5a',
   errorDark: '#430d15',
+  alert: '#f8e405',
+  success: '#20da6e',
 }
 
 // const bg1 = '#090a0a'
@@ -40,6 +42,7 @@ export const theme = {
     headerHeight: '7.5rem',
     cardWidth: '48rem',
     gutter: '0.5rem',
+    bigButtonHeight: '7rem',
   },
   borderRadius: {
     small: '0.5rem',
@@ -99,6 +102,12 @@ export const theme = {
   },
   buttons: {
     sizes: {
+      xsmall: {
+        fontSize: fontSizes.xxsmall,
+        padding: '0.5em 0.5em',
+        height: 'auto',
+        // textTransform: 'uppercase',
+      },
       small: {
         fontSize: fontSizes.small,
         padding: '0.7em 1.3em',
@@ -136,6 +145,10 @@ export const theme = {
       error: {
         color: colors.primary,
         backgroundColor: colors.error,
+      },
+      success: {
+        color: colors.primary,
+        backgroundColor: colors.success,
       },
     },
   },

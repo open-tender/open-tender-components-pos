@@ -2,9 +2,9 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 const ModalyBody = styled('div')`
-  & div {
-    margin: 0 0 ${(props) => props.theme.layout.padding};
-  }
+  // & > div {
+  //   margin: 0 0 ${(props) => props.theme.layout.padding};
+  // }
   & p + p {
     margin: 1.5rem 0 0;
   }

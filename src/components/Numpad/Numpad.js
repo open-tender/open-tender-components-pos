@@ -15,7 +15,7 @@ const NumpadRow = styled('div')`
 `
 
 const NumpadButton = styled('div')`
-  height: 7rem;
+  height: ${(props) => props.theme.layout.bigButtonHeight};
   padding: 0 0.1rem 0.1rem 0;
 
   & button {
@@ -55,7 +55,11 @@ const Numpad = ({
   return (
     <div style={{ width: '100%' }}>
       <div style={{ margin: '0 0 1rem' }}>
-        <input value={input || ''} readOnly={true} />
+        <input
+          value={input || ''}
+          readOnly={true}
+          style={{ textAlign: 'right' }}
+        />
       </div>
       <NumpadButtons>
         {buttons.map((row) => (
