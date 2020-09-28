@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { Scrollable } from '../Scrollable'
 
 const CardContainer = styled('div')`
   flex: 0 0 ${(props) => props.theme.layout.cardWidth};
@@ -32,8 +33,7 @@ const CardMain = styled('div')`
   width: 100%;
   flex-grow: 1;
   padding: 1.5rem;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: auto;
+  overflow: hidden;
 `
 
 const CardFooter = styled('div')`
@@ -48,7 +48,9 @@ const Card = ({ header, main, footer, style = null }) => {
     <CardContainer style={style}>
       <CardContent>
         <CardHeader>{header}</CardHeader>
-        <CardMain>{main}</CardMain>
+        <CardMain>
+          <Scrollable>{main}</Scrollable>
+        </CardMain>
         <CardFooter>{footer}</CardFooter>
       </CardContent>
     </CardContainer>
@@ -57,6 +59,10 @@ const Card = ({ header, main, footer, style = null }) => {
 
 Card.displayName = 'Card'
 Card.propTypes = {
+  header: propTypes.node,
+  main: propTypes.node,
+  footer: propTypes.node,
+  style: propTypes.object,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

@@ -122,13 +122,13 @@ export const theme = {
       },
       large: {
         fontSize: fontSizes.xlarge,
-        padding: '1.1em 0.7em',
-        height: 'auto',
+        padding: '0 0.7em',
+        height: '7rem',
       },
       tall: {
         fontSize: fontSizes.medium,
-        height: '5.5rem',
         padding: '0 0.7em',
+        height: '5rem',
       },
     },
     colors: {

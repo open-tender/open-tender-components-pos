@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 
 const Section = styled('div')`
   flex-grow: 1;
-  overflow-y: scroll;
 `
 
 Section.displayName = 'Section'
