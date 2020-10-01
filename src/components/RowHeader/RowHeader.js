@@ -9,11 +9,12 @@ const RowHeaderContainer = styled('div')`
 const RowHeaderTitle = styled('h3')`
   width: 100%;
   margin: 0 0 1rem -0.04em;
+  line-height: 1.2;
   ${(props) => props.theme.ellipsis}
 `
 
 const RowHeaderSubtitle = styled('div')`
-  font-size: 0 ${(props) => props.theme.fonts.sizes.xsmall};
+  font-size: ${(props) => props.theme.fonts.sizes.small};
 `
 
 const RowHeader = ({ title, children, style = null }) => {

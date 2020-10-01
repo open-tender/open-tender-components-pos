@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 const RowContainer = styled('div')`
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   margin: 0 0 1.5rem;
   border-radius: ${(props) => props.theme.borderRadius.medium};
@@ -29,6 +29,7 @@ const RowContentContainer = styled('div')`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 2rem 3rem;
 `
 
 const Row = ({ header, children, style = null }) => {
