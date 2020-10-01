@@ -34,11 +34,18 @@ const backgroundGradient = `linear-gradient(
     ${colors.bg2} 100%
   );`
 
+const ellipsis = `white-space: nowrap; overflow: hidden; text-overflow: ellipsis;`
+
 export const theme = {
   transition: 'all 0.15s ease',
   disabled: '0.25',
+  ellipsis: ellipsis,
+  datepicker: {
+    arrowSize: '1.4rem',
+  },
   layout: {
     padding: '3.0rem',
+    paddingSmall: '2rem',
     headerHeight: '7.5rem',
     cardWidth: '48rem',
     gutter: '0.5rem',
@@ -120,6 +127,10 @@ export const theme = {
         padding: '0.7em 1.3em',
         height: 'auto',
       },
+      //  large: {
+      //    fontSize: fontSizes.large,
+      //    padding: '0.7em 1.3em',
+      //  },
       large: {
         fontSize: fontSizes.xlarge,
         padding: '0 0.7em',

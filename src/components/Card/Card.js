@@ -63,10 +63,6 @@ Card.propTypes = {
   main: propTypes.node,
   footer: propTypes.node,
   style: propTypes.object,
-  children: propTypes.oneOfType([
-    propTypes.arrayOf(propTypes.node),
-    propTypes.node,
-  ]),
 }
 
 export default Card

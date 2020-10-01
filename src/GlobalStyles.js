@@ -270,6 +270,107 @@ const makeGlobalStyles = (theme) => css`
     opacity: 0;
     transform: translateY(-20%);
   }
+
+  .react-datepicker {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    background-color: ${theme.colors.bg2};
+    border-radius: ${theme.borderRadius.medium};
+  }
+
+  .react-datepicker__current-month {
+    line-height: 2.8;
+    font-weight: 500;
+  }
+
+  .react-datepicker__navigation {
+    text-indent: -999em;
+    overflow: hidden;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    width: 0;
+    height: 0;
+    text-align: center;
+  }
+
+  .react-datepicker__navigation--previous {
+    left: 2rem;
+    border-top: ${theme.datepicker.arrowSize} solid transparent;
+    border-bottom: ${theme.datepicker.arrowSize} solid transparent;
+    border-right: ${theme.datepicker.arrowSize} solid ${theme.colors.text};
+  }
+
+  .react-datepicker__navigation--next {
+    right: 2rem;
+    border-top: ${theme.datepicker.arrowSize} solid transparent;
+    border-bottom: ${theme.datepicker.arrowSize} solid transparent;
+    border-left: ${theme.datepicker.arrowSize} solid ${theme.colors.text};
+  }
+
+  .react-datepicker__header {
+    padding: 0.8rem 0 0;
+    text-align: center;
+  }
+
+  .react-datepicker__month {
+    text-align: center;
+  }
+
+  .react-datepicker__week,
+  .react-datepicker__day-names {
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  .react-datepicker__day,
+  .react-datepicker__day-name {
+    cursor: pointer;
+    display: inline-block;
+    width: 14.28571%;
+    padding: 0;
+    margin: 0;
+    line-height: 4;
+    text-align: center;
+  }
+
+  .react-datepicker__day {
+    color: ${theme.colors.text};
+    outline: none;
+    border: 0.1rem solid ${theme.colors.bg4};
+    border-left: 0;
+    border-bottom: 0;
+    transition: all 0.15s ease;
+  }
+
+  .react-datepicker__day:focus {
+    outline: none;
+  }
+
+  .react-datepicker__day:last-child {
+    border-right: 0;
+  }
+
+  .react-datepicker__day--selected {
+    background-color: ${theme.colors.link};
+  }
+
+  .react-datepicker__day--disabled {
+    cursor: default;
+    color: ${theme.colors.border};
+    opacity: 0.5;
+  }
+
+  .react-datepicker__day--disabled:hover {
+    background-color: transparent !important;
+  }
+
+  .react-datepicker__day--outside-month {
+    color: ${theme.colors.border};
+  }
 `
 
 const GlobalStyles = withTheme(({ theme }) => {
