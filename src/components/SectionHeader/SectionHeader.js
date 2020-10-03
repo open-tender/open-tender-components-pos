@@ -6,6 +6,10 @@ const SectionHeaderContainer = styled('div')`
   width: 100%;
   margin: 0 0 ${(props) => props.theme.layout.padding};
 
+  &:not(:first-of-type) {
+    margin-top: 6rem;
+  }
+
   & p {
     margin: 1.5rem 0 0;
   }

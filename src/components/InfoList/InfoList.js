@@ -7,7 +7,7 @@ const InfoListItem = styled('li')`
   padding: 0 0 0 0.6rem;
   border-left: 0.1rem solid ${(props) => props.theme.colors.border};
   margin: 0 0 0 0.6rem;
-  &:first-child {
+  &:first-of-type {
     padding: 0;
     border: 0;
     margin: 0;

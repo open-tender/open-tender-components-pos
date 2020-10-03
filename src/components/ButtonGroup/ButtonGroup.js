@@ -10,7 +10,7 @@ const ButtonGroup = styled('div')`
     display: block;
     min-width: ${(props) => props.minWidth || '10rem'};
 
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       margin-left: 0.1rem;
