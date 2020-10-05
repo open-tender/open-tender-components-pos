@@ -35,7 +35,7 @@ const RowContentContainer = styled('div')`
 const Row = ({ header, children, style = null }) => {
   return (
     <RowContainer style={style}>
-      <RowHeaderContainer>{header}</RowHeaderContainer>
+      {header && <RowHeaderContainer>{header}</RowHeaderContainer>}
       <RowContentContainer>{children}</RowContentContainer>
     </RowContainer>
   )

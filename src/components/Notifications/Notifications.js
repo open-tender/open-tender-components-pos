@@ -13,13 +13,13 @@ const NotificationsContainer = styled('div')`
   flex-direction: column;
 `
 
-const Notifications = ({ messages = [], hide }) => {
+const Notifications = ({ messages = [], hide, timeout = 3000 }) => {
   return (
     <NotificationsContainer>
       <TransitionGroup component={'ul'}>
         {messages.map((message) => (
           <CSSTransition key={message.id} classNames="flash" timeout={500}>
-            <Notification {...message} hide={hide} />
+            <Notification {...message} hide={hide} timeout={timeout} />
           </CSSTransition>
         ))}
       </TransitionGroup>
@@ -31,6 +31,7 @@ Notifications.displayName = 'Notifications'
 Notifications.propTypes = {
   messages: propTypes.array,
   hide: propTypes.func,
+  timeout: propTypes.number,
 }
 
 export default Notifications

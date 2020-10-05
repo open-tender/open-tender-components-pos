@@ -44,7 +44,7 @@ const Button = ({
     evt.target.blur()
     evt.preventDefault()
     evt.stopPropagation()
-    onClick()
+    if (!disabled) onClick()
   }
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table } from '.'
-import { Content, Page, Section, Greeting } from '..'
+import { Content, Page, Section } from '..'
 import { FlexCentered } from '../FlexCentered'
 
 export default {

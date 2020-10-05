@@ -17,11 +17,11 @@ const NotificationContainer = styled('li')`
   background-color: ${(props) => props.theme.colors.link};
 `
 
-const Notification = ({ message, id, hide }) => {
+const Notification = ({ message, id, hide, timeout = 3000 }) => {
   useEffect(() => {
-    const timer = setTimeout(() => hide(id), 3000)
+    const timer = setTimeout(() => hide(id), timeout)
     return () => clearTimeout(timer)
-  }, [hide, id])
+  }, [hide, id, timeout])
 
   return <NotificationContainer>{message}</NotificationContainer>
 }
@@ -31,6 +31,7 @@ Notification.propTypes = {
   message: propTypes.string,
   id: propTypes.string,
   hide: propTypes.func,
+  timeout: propTypes.number,
 }
 
 export default Notification

@@ -116,6 +116,11 @@ export const theme = {
   },
   buttons: {
     sizes: {
+      link: {
+        fontSize: 'inherit',
+        padding: '0',
+        height: 'auto',
+      },
       xsmall: {
         fontSize: fontSizes.xxsmall,
         padding: '0.5em 0.5em',
@@ -148,6 +153,10 @@ export const theme = {
       },
     },
     colors: {
+      link: {
+        color: colors.link,
+        backgroundColor: 'transparent',
+      },
       primary: {
         color: colors.primary,
         backgroundColor: colors.bg4,
