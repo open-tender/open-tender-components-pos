@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 const Preface = styled('p')`
   font-size: ${(props) => props.theme.fonts.sizes[props.size || 'medium']};
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   color: ${(props) => props.theme.colors.textSecondary};
 `
 

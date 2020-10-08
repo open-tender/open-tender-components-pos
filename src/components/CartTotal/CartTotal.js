@@ -42,6 +42,8 @@ CartTotal.displayName = 'CartTotal'
 CartTotal.propTypes = {
   title: propTypes.string,
   amount: propTypes.string,
+  size: propTypes.string,
+  color: propTypes.string,
   style: propTypes.object,
 }
 

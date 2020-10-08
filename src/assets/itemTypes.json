@@ -1,0 +1,41 @@
+[
+  {
+    "default_prep_status": "TODO",
+    "is_default": true,
+    "is_grouped": false,
+    "is_hidden_assembly": false,
+    "is_hidden_qa": false,
+    "item_type_id": 4,
+    "items": [3645, 3644, 3640, 3642, 3643],
+    "name": "Entree",
+    "position": 1,
+    "prep_time": 60,
+    "print_on_completed": false
+  },
+  {
+    "default_prep_status": "DONE",
+    "is_default": false,
+    "is_grouped": true,
+    "is_hidden_assembly": true,
+    "is_hidden_qa": false,
+    "item_type_id": 5,
+    "items": [3767, 3766, 46849, 3765, 3764, 3763, 3762, 3761, 3760, 3759],
+    "name": "Drink",
+    "position": 2,
+    "prep_time": 0,
+    "print_on_completed": false
+  },
+  {
+    "default_prep_status": "DONE",
+    "is_default": false,
+    "is_grouped": true,
+    "is_hidden_assembly": true,
+    "is_hidden_qa": false,
+    "item_type_id": 6,
+    "items": [3686, 3681, 3685, 3684, 7725, 3683, 7724, 3682],
+    "name": "Side",
+    "position": 3,
+    "prep_time": 0,
+    "print_on_completed": false
+  }
+]

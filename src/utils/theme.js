@@ -49,7 +49,7 @@ export const theme = {
   },
   layout: {
     padding: '3.0rem',
-    paddingSmall: '2rem',
+    paddingSmall: '2.0rem',
     headerHeight: '7.5rem',
     sidebarWidth: '30rem',
     cardWidth: '48rem',
@@ -155,6 +155,10 @@ export const theme = {
     colors: {
       link: {
         color: colors.link,
+        backgroundColor: 'transparent',
+      },
+      invisible: {
+        color: colors.primary,
         backgroundColor: 'transparent',
       },
       primary: {

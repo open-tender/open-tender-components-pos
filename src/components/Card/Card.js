@@ -25,14 +25,14 @@ const CardHeader = styled('div')`
   position: relative;
   width: 100%;
   flex-grow: 0;
-  padding: 1.5rem;
+  padding: ${(props) => props.theme.layout.paddingSmall};
   background-color: ${(props) => props.theme.colors.bg1};
 `
 
 const CardMain = styled('div')`
   width: 100%;
   flex-grow: 1;
-  padding: 1.5rem;
+  padding: ${(props) => props.theme.layout.paddingSmall};
   overflow: hidden;
 `
 
@@ -40,7 +40,7 @@ const CardFooter = styled('div')`
   position: relative;
   width: 100%;
   flex-grow: 0;
-  padding: 1.5rem;
+  padding: ${(props) => props.theme.layout.paddingSmall};
 `
 
 const Card = ({ header, main, footer, style = null }) => {

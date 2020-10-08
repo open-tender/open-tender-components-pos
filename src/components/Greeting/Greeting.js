@@ -34,7 +34,7 @@ const GreetingContent = styled('div')`
 
 const Greeting = ({ title, children }) => {
   return (
-    <GreetingContainer>
+    <GreetingContainer className="slide-up">
       {title && <GreetingTitle>{title}</GreetingTitle>}
       <GreetingContent>{children}</GreetingContent>
     </GreetingContainer>
