@@ -4,7 +4,6 @@ import { makeItemTypesMap, makeTicketGroups } from '@open-tender/js'
 import styled from '@emotion/styled'
 import { Preface } from '../Preface'
 import { AlertTriangle } from 'react-feather'
-// import OrderTicketModifiers from './OrderTicketModifiers'
 
 const OrderTicketsContainer = styled('div')`
   text-align: left;
@@ -87,6 +86,10 @@ const OrderTicketModifiersOption = styled('p')`
   margin: 0 0 0.7rem;
   font-size: ${(props) => props.theme.fonts.sizes.xsmall};
   color: ${(props) => props.theme.colors[props.color]};
+
+  &:last-child {
+    margin: 0;
+  }
 `
 
 const OrderTicketModifiersOptionName = styled('span')`
@@ -104,10 +107,8 @@ const OrderTickets = ({
   const itemTypesMap = makeItemTypesMap(itemTypes)
   const { tickets, cart } = order
   const groups = makeTicketGroups(tickets, cart, itemTypesMap, isAssembly)
-  const flex = modal
-    ? `display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap;`
-    : null
-  const flexChild = modal ? `flex: 0 0 33.33333%;` : null
+  const flex = modal ? `display: flex; flex-wrap: wrap;` : null
+  const flexChild = modal ? `flex: 0 0 33.33333%; display: flex;` : null
   return (
     <OrderTicketsContainer style={style} flex={flex}>
       {groups.map((group) =>

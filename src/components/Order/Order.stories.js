@@ -1,11 +1,7 @@
 import React from 'react'
-import { Card, OrderHeader, CartLineItem } from '..'
-import { Content } from '../Content'
-import { FlexCentered } from '../FlexCentered'
+import { Card, OrderHeader, OrderTickets, CartTotal } from '..'
 import order from '../../assets/order.json'
 import itemTypes from '../../assets/itemTypes.json'
-import { OrderTickets } from '../OrderTickets'
-import { CartTotal } from '../CartTotal'
 
 export default {
   title: 'Components/Order',
@@ -27,8 +23,6 @@ const webOrder = {
 }
 
 const Template = (args) => {
-  // console.log(order)
-  // console.log(itemTypes)
   return (
     <Card
       header={<OrderHeader order={args.order} />}
