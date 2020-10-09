@@ -32,10 +32,15 @@ const RowContentContainer = styled('div')`
   padding: 2rem 3rem;
 `
 
-const Row = ({ header, children, style = null }) => {
+const Row = ({ header, children, expand = null, style = null }) => {
   return (
     <RowContainer style={style}>
-      {header && <RowHeaderContainer>{header}</RowHeaderContainer>}
+      {header && (
+        <RowHeaderContainer>
+          {expand}
+          {header}
+        </RowHeaderContainer>
+      )}
       <RowContentContainer>{children}</RowContentContainer>
     </RowContainer>
   )
@@ -44,6 +49,7 @@ const Row = ({ header, children, style = null }) => {
 Row.displayName = 'Row'
 Row.propTypes = {
   header: propTypes.node,
+  expand: propTypes.node,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

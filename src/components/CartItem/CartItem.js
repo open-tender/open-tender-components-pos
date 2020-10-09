@@ -3,7 +3,11 @@ import styled from '@emotion/styled'
 
 const CartItem = styled('div')`
   width: 100%;
-  padding: 0 0 1.5rem;
+  padding: 0 0 ${(props) => props.theme.layout.paddingSmall};
+
+  &:first-child {
+    padding-top: ${(props) => props.theme.layout.paddingSmall};
+  }
 
   & button {
     width: 100%;

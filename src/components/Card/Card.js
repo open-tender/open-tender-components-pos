@@ -32,7 +32,7 @@ const CardHeader = styled('div')`
 const CardMain = styled('div')`
   width: 100%;
   flex-grow: 1;
-  padding: ${(props) => props.theme.layout.paddingSmall};
+  padding: 0 ${(props) => props.theme.layout.paddingSmall};
   overflow: hidden;
 `
 
