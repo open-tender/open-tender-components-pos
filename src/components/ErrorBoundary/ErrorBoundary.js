@@ -13,6 +13,7 @@ class ErrorBoundary extends React.Component {
   static propTypes = {
     logError: propTypes.func,
     reload: propTypes.func,
+    context: propTypes.object,
     children: propTypes.node.isRequired,
   }
 
@@ -25,7 +26,8 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    const { logError, reload } = this.props
+    const { logError, reload, context } = this.props
+    console.log('ErrorBoundary', context)
     const { hasError, error, errorInfo } = this.state
     return hasError ? (
       <ErrorPage
@@ -33,6 +35,7 @@ class ErrorBoundary extends React.Component {
         errorInfo={errorInfo}
         logError={logError}
         reload={reload}
+        context={context}
       />
     ) : (
       this.props.children

@@ -22,7 +22,7 @@ const ErrorDetails = styled('div')`
   }
 `
 
-const ErrorPage = ({ error, errorInfo, logError, reload }) => {
+const ErrorPage = ({ error, errorInfo, logError, reload, context }) => {
   const [eventId, setEventId] = useState(null)
   const errorObj = error.message
     ? { title: 'Unexpected Error', detail: error.message }
@@ -37,9 +37,9 @@ const ErrorPage = ({ error, errorInfo, logError, reload }) => {
   useEffect(() => {
     const err = error.message ? error : new Error(error.detail)
     const extra = errorInfo || error
-    const evtId = logError(err, extra)
+    const evtId = logError(err, extra, context)
     setEventId(evtId)
-  }, [error, errorInfo, logError])
+  }, [error, errorInfo, logError, context])
 
   return (
     <Page isError={true}>
@@ -75,6 +75,7 @@ ErrorPage.propTypes = {
   errorInfo: propTypes.object,
   logError: propTypes.func,
   reload: propTypes.func,
+  context: propTypes.object,
 }
 
 export default ErrorPage
