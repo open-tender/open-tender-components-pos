@@ -27,7 +27,6 @@ class ErrorBoundary extends React.Component {
 
   render() {
     const { logError, reload, context } = this.props
-    console.log('ErrorBoundary', context)
     const { hasError, error, errorInfo } = this.state
     return hasError ? (
       <ErrorPage
