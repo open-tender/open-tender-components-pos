@@ -24,6 +24,7 @@ export const colors = {
   errorDark: '#430d15',
   alert: '#f8e405',
   success: '#20da6e',
+  successDark: '#1cbc5f',
 }
 
 // const bg1 = '#090a0a'
@@ -71,6 +72,7 @@ export const theme = {
     border: '#444958',
     link: colors.link,
     success: colors.success,
+    successDark: colors.successDark,
     alert: colors.alert,
     error: colors.error,
     errorDark: colors.errorDark,
@@ -180,6 +182,10 @@ export const theme = {
       success: {
         color: colors.primary,
         backgroundColor: colors.success,
+      },
+      successDark: {
+        color: colors.primary,
+        backgroundColor: colors.successDark,
       },
     },
   },
