@@ -1,31 +1,21 @@
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
-const CartItem = styled('div')`
+const RefundItem = styled('div')`
   width: 100%;
   padding: 0 0 ${(props) => props.theme.layout.paddingSmall};
 
   &:first-of-type {
     padding-top: ${(props) => props.theme.layout.paddingSmall};
   }
-
-  & button {
-    width: 100%;
-    padding: 0;
-  }
-
-  & button > span {
-    display: block;
-    width: 100%;
-  }
 `
 
-CartItem.displayName = 'CartItem'
-CartItem.propTypes = {
+RefundItem.displayName = 'RefundItem'
+RefundItem.propTypes = {
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,
   ]),
 }
 
-export default CartItem
+export default RefundItem
