@@ -7,6 +7,7 @@ const CartLineItemContainer = styled('span')`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 1.1;
   font-size: ${(props) => props.theme.fonts.sizes[props.size]};
   color: ${(props) => props.theme.colors[props.color]};
 `

@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 
 const RefundItem = styled('div')`
   width: 100%;
-  padding: 0 0 ${(props) => props.theme.layout.paddingSmall};
+  padding: 0 0 1.5rem;
 
   &:first-of-type {
-    padding-top: ${(props) => props.theme.layout.paddingSmall};
+    padding-top: 1.5rem;
   }
 `
 

@@ -9,6 +9,11 @@ const RefundLineItemContainer = styled('span')`
   align-items: center;
   font-size: ${(props) => props.theme.fonts.sizes[props.size]};
   color: ${(props) => props.theme.colors[props.color]};
+  padding: 0.6rem 0 0;
+
+  &:nth-child(2) {
+    padding: 0.2rem 0 0;
+  }
 `
 
 const RefundLineItemName = styled('span')`
@@ -22,19 +27,19 @@ const RefundLineItemName = styled('span')`
 
 const RefundLineItemQuantity = styled('span')`
   display: block;
-  flex: 0 0 12.5%;
+  flex: 0 0 15%;
   text-align: right;
 `
 
 const RefundLineItemPrice = styled('span')`
   display: block;
-  flex: 0 0 17.5%;
+  flex: 0 0 20%;
   text-align: right;
 `
 
 const RefundLineItemButton = styled('span')`
   display: block;
-  flex: 0 0 30%;
+  flex: 0 0 25%;
   text-align: right;
 `
 
