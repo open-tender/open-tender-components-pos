@@ -9,7 +9,7 @@ const RowContainer = styled('div')`
   width: 100%;
   margin: 0 0 1.5rem;
   border-radius: ${(props) => props.theme.borderRadius.medium};
-  background-color: ${(props) => props.theme.colors.bg4};
+  background-color: ${(props) => props.rowColor || props.theme.colors.bg4};
   overflow: hidden;
 `
 
@@ -20,7 +20,7 @@ const RowHeaderContainer = styled('div')`
   overflow: hidden;
   padding: 2rem 0.5rem 2rem 3rem;
   padding-right: 0.5rem;
-  background-color: ${(props) => props.theme.colors.bg1};
+  background-color: ${(props) => props.headerColor || props.theme.colors.bg1};
 `
 
 const RowContentContainer = styled('div')`
@@ -32,11 +32,18 @@ const RowContentContainer = styled('div')`
   padding: 2rem 3rem;
 `
 
-const Row = ({ header, children, expand = null, style = null }) => {
+const Row = ({
+  header,
+  expand = null,
+  rowColor = null,
+  headerColor = null,
+  style = null,
+  children,
+}) => {
   return (
-    <RowContainer style={style}>
+    <RowContainer style={style} rowColor={rowColor}>
       {header && (
-        <RowHeaderContainer>
+        <RowHeaderContainer headerColor={headerColor}>
           {expand}
           {header}
         </RowHeaderContainer>
@@ -55,6 +62,8 @@ Row.propTypes = {
     propTypes.node,
   ]),
   style: propTypes.object,
+  rowColor: propTypes.string,
+  headerColor: propTypes.string,
 }
 
 export default Row

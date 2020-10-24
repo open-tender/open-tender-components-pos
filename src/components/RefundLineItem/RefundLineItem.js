@@ -11,7 +11,7 @@ const RefundLineItemContainer = styled('span')`
   color: ${(props) => props.theme.colors[props.color]};
   padding: 0.6rem 0 0;
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     padding: 0.2rem 0 0;
   }
 `
