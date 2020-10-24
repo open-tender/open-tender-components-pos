@@ -6,7 +6,9 @@ const Main = styled('div')`
   z-index: 1;
   width: 100%;
   height: 100%;
-  padding: 0;
+  padding: 0 0 0
+    ${(props) =>
+      props.hasSidebar ? props.theme.layout.sidebarNarrowWidth : '0'};
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -15,6 +17,7 @@ const Main = styled('div')`
 
 Main.displayName = 'Main'
 Main.propTypes = {
+  hasSidebar: propTypes.bool,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

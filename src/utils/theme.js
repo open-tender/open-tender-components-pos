@@ -52,6 +52,7 @@ export const theme = {
     padding: '3.0rem',
     paddingSmall: '2.0rem',
     headerHeight: '7.5rem',
+    sidebarNarrowWidth: '16rem',
     sidebarWidth: '30rem',
     cardWidth: '48rem',
     gutter: '0.5rem',
@@ -74,6 +75,7 @@ export const theme = {
     success: colors.success,
     successDark: colors.successDark,
     alert: colors.alert,
+    warning: colors.error,
     error: colors.error,
     errorDark: colors.errorDark,
     overlay: 'rgba(0, 0, 0, 0.8)',
@@ -186,6 +188,10 @@ export const theme = {
       successDark: {
         color: colors.primary,
         backgroundColor: colors.successDark,
+      },
+      darkText: {
+        color: colors.bg4,
+        backgroundColor: 'transparent',
       },
     },
   },

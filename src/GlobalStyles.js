@@ -271,6 +271,21 @@ const makeGlobalStyles = (theme) => css`
     transform: translateY(-20%);
   }
 
+  .slide-enter,
+  .slide-exit.slide-exit-active {
+    transition: all 250ms ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
+
+  .slide-enter.slide-enter-active,
+  .slide-exit {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
   .react-datepicker {
     position: relative;
     width: 100%;
