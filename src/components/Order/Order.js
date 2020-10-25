@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { Card, OrderHeader, OrderTickets } from '..'
+import { Card, OrderHeader, OrderTickets, OrderFooter } from '..'
 
 const Order = ({
   order,
@@ -17,6 +17,10 @@ const Order = ({
   updateTicket,
   refreshCompletedOrders,
   showNotification,
+  printReceipt,
+  printTickets,
+  updateOrder,
+  resetOrder,
 }) => {
   return (
     <Card
@@ -43,8 +47,18 @@ const Order = ({
           showNotification={showNotification}
         />
       }
-      mainPadding={`padding-right: 0;`}
-      // footer={<OrderFooter order={order} />}
+      mainStyle={{ paddingRight: '0' }}
+      footer={
+        <OrderFooter
+          order={order}
+          doneOnPrint={doneOnPrint}
+          printReceipt={printReceipt}
+          printTickets={printTickets}
+          updateOrder={updateOrder}
+          resetOrder={resetOrder}
+        />
+      }
+      footerStyle={{ paddingRight: '0' }}
       style={style}
     />
   )
@@ -66,6 +80,10 @@ Order.propTypes = {
   updateTicket: propTypes.func,
   refreshCompletedOrders: propTypes.func,
   showNotification: propTypes.func,
+  printReceipt: propTypes.func,
+  printTickets: propTypes.func,
+  updateOrder: propTypes.func,
+  resetOrder: propTypes.func,
 }
 
 export default Order

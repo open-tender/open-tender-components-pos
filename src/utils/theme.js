@@ -202,6 +202,11 @@ export const theme = {
         color: colors.dead,
         backgroundColor: 'transparent',
       },
+      iconDisabled: {
+        color: colors.dead,
+        backgroundColor: 'transparent',
+        opacity: '0.25',
+      },
       iconSuccess: {
         color: colors.success,
         backgroundColor: 'transparent',

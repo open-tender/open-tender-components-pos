@@ -30,11 +30,9 @@ const OrderTicketButtons = ({
   order,
   ticket,
   doneOnPrint = false,
-  isPast = false,
   closeOrder,
   printTicket,
   updateTicket,
-  refreshCompletedOrders,
   showNotification,
 }) => {
   const { order_uuid, prep_status, timezone, fire_at } = order
@@ -77,7 +75,7 @@ const OrderTicketButtons = ({
     <OrderTicketButtonsContainer>
       {!isFuture && (
         <Button
-          color={ticket_status !== prepStatus.TODO ? 'iconDead' : 'icon'}
+          color={ticket_status === prepStatus.TODO ? 'icon' : 'iconDead'}
           onClick={print}
         >
           <Printer size={size} />

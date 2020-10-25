@@ -131,6 +131,7 @@ const OrderTickets = ({
   const { tickets, cart, fulfillment } = order
   const vehicle = makeVehicle(fulfillment)
   const groups = makeTicketGroups(tickets, cart, itemTypesMap, isAssembly)
+  const displayedCount = groups.filter((i) => i.length).length
   const flex = isOpen ? `display: flex; flex-wrap: wrap;` : null
   const flexChild = isOpen ? `flex: 0 0 33.33333%; display: flex;` : null
   return (
@@ -140,7 +141,7 @@ const OrderTickets = ({
         {groups.map((group, groupIndex) =>
           group.map((ticket, index) => {
             const { item_type_name, items } = ticket
-            const showLine = isOpen || groupIndex + 1 !== groups.length
+            const showLine = isOpen || groupIndex + 1 !== displayedCount
             return (
               <OrderTicket key={ticket.ticket_no} flexChild={flexChild}>
                 <OrderTicketButtons

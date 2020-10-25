@@ -124,7 +124,6 @@ const List = ({ orders = [], itemTypes, tz }) => {
     evt.target.blur()
     evt.preventDefault()
     evt.stopPropagation()
-    console.log(order)
   }
   return (
     <ListContainer>

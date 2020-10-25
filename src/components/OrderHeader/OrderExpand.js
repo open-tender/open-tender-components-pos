@@ -8,7 +8,7 @@ const OrderExpandContainer = styled('div')`
   position: absolute;
   z-index: 1;
   top: -0.3rem;
-  right: -0.2rem;
+  right: -0.3rem;
   width: 4.4rem;
   text-align: center;
 
