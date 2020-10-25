@@ -22,7 +22,14 @@ const Column = styled('div')`
   margin: 0 1.5rem 0 0;
 `
 
-const Columns = ({ orders = [] }) => {
+const Columns = ({
+  orders = [],
+  itemTypes = [],
+  actions = {},
+  isAssembly = false,
+  isPast = false,
+  doneOnPrint = false,
+}) => {
   return (
     <ColumnsContainer>
       <TransitionGroup component={null}>
@@ -33,7 +40,14 @@ const Columns = ({ orders = [] }) => {
             timeout={250}
           >
             <Column>
-              <Order order={order} />
+              <Order
+                order={order}
+                itemTypes={itemTypes}
+                isAssembly={isAssembly}
+                isPast={isPast}
+                doneOnPrint={doneOnPrint}
+                {...actions}
+              />
             </Column>
           </CSSTransition>
         ))}
@@ -45,6 +59,11 @@ const Columns = ({ orders = [] }) => {
 Columns.displayName = 'Columns'
 Columns.propTypes = {
   orders: propTypes.array,
+  itemTypes: propTypes.array,
+  actions: propTypes.object,
+  isAssembly: propTypes.bool,
+  isPast: propTypes.bool,
+  doneOnPrint: propTypes.bool,
 }
 
 export default Columns

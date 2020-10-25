@@ -2,7 +2,8 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { makeChannelName, formatDollars } from '@open-tender/js'
 import styled from '@emotion/styled'
-import { InfoList } from '../InfoList'
+import { InfoList } from '..'
+import { OrderExpand } from '.'
 
 const OrderHeaderContainer = styled('div')`
   display: flex;
@@ -21,7 +22,7 @@ const OrderHeaderDetails = styled('div')`
 
 const OrderHeaderCustomer = styled('h2')`
   width: 100%;
-  margin: 0 0 0.8rem -0.04em;
+  margin: 0 0 0.6rem -0.04em;
   line-height: 1.2;
   ${(props) => props.theme.ellipsis}
 `
@@ -40,12 +41,19 @@ const OrderHeaderNumbers = styled('div')`
   }
 
   & div ul li {
-    font-size: ${(props) => props.theme.fonts.sizes.small};
+    font-size: ${(props) => props.theme.fonts.sizes.xsmall};
     color: ${(props) => props.theme.colors.textSecondary};
   }
 `
 
-const OrderHeader = ({ order, children, style = null }) => {
+const OrderHeader = ({
+  order,
+  isOpen = false,
+  openOrder,
+  closeOrder,
+  children,
+  style = null,
+}) => {
   const { customer, channel, daily_id, order_id, totals } = order
   const channelName = makeChannelName(channel)
   const { first_name, last_name, phone } = customer || {}
@@ -56,7 +64,13 @@ const OrderHeader = ({ order, children, style = null }) => {
   ]
   return (
     <OrderHeaderContainer style={style}>
-      <OrderHeaderDetails style={style}>
+      <OrderExpand
+        order={order}
+        isOpen={isOpen}
+        openOrder={openOrder}
+        closeOrder={closeOrder}
+      />
+      <OrderHeaderDetails>
         <OrderHeaderCustomer>{customerName}</OrderHeaderCustomer>
         <InfoList items={phone ? [channelName, phone] : [channelName]} />
         <OrderHeaderNumbers>
@@ -77,6 +91,9 @@ OrderHeader.propTypes = {
     propTypes.node,
   ]),
   style: propTypes.object,
+  isOpen: propTypes.bool,
+  openOrder: propTypes.func,
+  closeOrder: propTypes.func,
 }
 
 export default OrderHeader

@@ -1,3 +1,4 @@
 import OrderHeader from './OrderHeader'
+import OrderExpand from './OrderExpand'
 
-export { OrderHeader }
+export { OrderHeader, OrderExpand }

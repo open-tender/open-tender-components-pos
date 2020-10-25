@@ -2,8 +2,9 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { makeItemTypesMap, makeTicketGroups } from '@open-tender/js'
 import styled from '@emotion/styled'
-import { Preface } from '../Preface'
 import { AlertTriangle } from 'react-feather'
+import { Preface } from '..'
+import { OrderTicketButtons } from '.'
 
 const OrderTicketsContainer = styled('div')`
   text-align: left;
@@ -13,7 +14,7 @@ const OrderTicketsContainer = styled('div')`
 const OrderTicket = styled('div')`
   position: relative;
   padding: 0 0 1.5rem;
-  border-bottom: 0.1rem solid ${(props) => props.theme.colors.border};
+  // border-bottom: 0.1rem solid ${(props) => props.theme.colors.border};
   margin: ${(props) => props.theme.layout.paddingSmall} 0 0;
   ${(props) => props.flexChild}
 
@@ -22,11 +23,13 @@ const OrderTicket = styled('div')`
   }
 `
 
-const OrderTicketButtons = styled('div')`
+const OrderTicketLine = styled('div')`
   position: absolute;
-  z-index: 1;
-  top: 0.4rem;
-  right: -1.4rem;
+  bottom: 0;
+  left: 0;
+  right: ${(props) => props.theme.layout.paddingSmall};
+  height: 0.1rem;
+  background-color: ${(props) => props.theme.colors.border};
 `
 
 const OrderTicketItem = styled('div')``
@@ -111,32 +114,53 @@ const makeVehicle = (fulfillment) => {
 const OrderTickets = ({
   order,
   itemTypes,
-  modal = false,
+  isOpen = false,
   isAssembly = false,
+  isPast = false,
+  doneOnPrint = false,
   expand = true,
   style = null,
+  openOrder,
+  closeOrder,
+  printTicket,
+  updateTicket,
+  refreshCompletedOrders,
+  showNotification,
 }) => {
   const itemTypesMap = makeItemTypesMap(itemTypes)
   const { tickets, cart, fulfillment } = order
   const vehicle = makeVehicle(fulfillment)
   const groups = makeTicketGroups(tickets, cart, itemTypesMap, isAssembly)
-  const flex = modal ? `display: flex; flex-wrap: wrap;` : null
-  const flexChild = modal ? `flex: 0 0 33.33333%; display: flex;` : null
+  const flex = isOpen ? `display: flex; flex-wrap: wrap;` : null
+  const flexChild = isOpen ? `flex: 0 0 33.33333%; display: flex;` : null
   return (
     <>
       {vehicle && <OrderFulfillment>Curbside: {vehicle}</OrderFulfillment>}
       <OrderTicketsContainer style={style} flex={flex}>
-        {groups.map((group) =>
+        {groups.map((group, groupIndex) =>
           group.map((ticket, index) => {
             const { item_type_name, items } = ticket
+            const showLine = isOpen || groupIndex + 1 !== groups.length
             return (
               <OrderTicket key={ticket.ticket_no} flexChild={flexChild}>
-                <OrderTicketButtons />
+                <OrderTicketButtons
+                  order={order}
+                  ticket={ticket}
+                  isPast={isPast}
+                  doneOnPrint={doneOnPrint}
+                  openOrder={openOrder}
+                  closeOrder={closeOrder}
+                  printTicket={printTicket}
+                  updateTicket={updateTicket}
+                  refreshCompletedOrders={refreshCompletedOrders}
+                  showNotification={showNotification}
+                />
+                {showLine && <OrderTicketLine />}
                 {ticket.is_grouped ? (
                   <OrderTicketItem>
                     <OrderTicketItemHeader>
                       <OrderTicketItemInfo>
-                        <Preface size="xxsmall">All {item_type_name}</Preface>
+                        <Preface size="xxsmall">All {item_type_name}s</Preface>
                       </OrderTicketItemInfo>
                       <OrderTicketItemTitle>
                         <p>
@@ -230,14 +254,22 @@ OrderTickets.displayName = 'OrderTickets'
 OrderTickets.propTypes = {
   order: propTypes.object,
   itemTypes: propTypes.array,
-  modal: propTypes.bool,
+  isOpen: propTypes.bool,
   isAssembly: propTypes.bool,
+  isPast: propTypes.bool,
+  doneOnPrint: propTypes.bool,
   expand: propTypes.bool,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,
   ]),
   style: propTypes.object,
+  openOrder: propTypes.func,
+  closeOrder: propTypes.func,
+  printTicket: propTypes.func,
+  updateTicket: propTypes.func,
+  refreshCompletedOrders: propTypes.func,
+  showNotification: propTypes.func,
 }
 
 export default OrderTickets

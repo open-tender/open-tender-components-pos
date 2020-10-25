@@ -33,6 +33,7 @@ const CardMain = styled('div')`
   width: 100%;
   flex-grow: 1;
   padding: 0 ${(props) => props.theme.layout.paddingSmall};
+  ${(props) => props.mainPadding || null}
   overflow: hidden;
 `
 
@@ -43,12 +44,12 @@ const CardFooter = styled('div')`
   padding: ${(props) => props.theme.layout.paddingSmall};
 `
 
-const Card = ({ header, main, footer, style = null }) => {
+const Card = ({ header, main, footer, mainPadding, style = null }) => {
   return (
     <CardContainer style={style}>
       <CardContent>
         <CardHeader>{header}</CardHeader>
-        <CardMain>
+        <CardMain mainPadding={mainPadding}>
           <Scrollable>{main}</Scrollable>
         </CardMain>
         <CardFooter>{footer}</CardFooter>
@@ -62,6 +63,7 @@ Card.propTypes = {
   header: propTypes.node,
   main: propTypes.node,
   footer: propTypes.node,
+  mainPadding: propTypes.string,
   style: propTypes.object,
 }
 

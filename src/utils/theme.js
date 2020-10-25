@@ -25,6 +25,7 @@ export const colors = {
   alert: '#f8e405',
   success: '#20da6e',
   successDark: '#1cbc5f',
+  dead: '#697188',
 }
 
 // const bg1 = '#090a0a'
@@ -191,6 +192,18 @@ export const theme = {
       },
       darkText: {
         color: colors.bg4,
+        backgroundColor: 'transparent',
+      },
+      icon: {
+        color: colors.primary,
+        backgroundColor: 'transparent',
+      },
+      iconDead: {
+        color: colors.dead,
+        backgroundColor: 'transparent',
+      },
+      iconSuccess: {
+        color: colors.success,
         backgroundColor: 'transparent',
       },
     },
