@@ -1,11 +1,12 @@
 import React from 'react'
-import { Card, OrderHeader, OrderTickets, CartTotal } from '..'
+import { Order } from '.'
+// import { Card, OrderHeader, OrderTickets, CartTotal } from '..'
 import order from '../../assets/order.json'
 import itemTypes from '../../assets/itemTypes.json'
 
 export default {
   title: 'Components/Order',
-  component: Card,
+  component: Order,
 }
 
 const webOrder = {
@@ -22,31 +23,22 @@ const webOrder = {
   },
 }
 
-const Template = (args) => {
-  return (
-    <Card
-      header={<OrderHeader order={args.order} />}
-      main={
-        <OrderTickets
-          order={order}
-          itemTypes={itemTypes}
-          expand={args.expand}
-        />
-      }
-      footer={<CartTotal amount={order.totals.total} />}
-      style={{ padding: '2rem 0', margin: '0 auto' }}
-    />
-  )
-}
+const Template = (args) => <Order {...args} />
 
 export const WebCollapsed = Template.bind({})
 WebCollapsed.args = {
+  order: { ...order, ...webOrder },
+  itemTypes: itemTypes,
+  isAssembly: false,
   expand: false,
-  order: webOrder,
+  style: { padding: '2rem 0', margin: '0 auto' },
 }
 
 export const WebExpanded = Template.bind({})
 WebExpanded.args = {
+  order: { ...order, ...webOrder },
+  itemTypes: itemTypes,
+  isAssembly: false,
   expand: true,
-  order: webOrder,
+  style: { padding: '2rem 0', margin: '0 auto' },
 }

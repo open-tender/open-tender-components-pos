@@ -286,6 +286,28 @@ const makeGlobalStyles = (theme) => css`
     transform: translateX(0);
   }
 
+  .fade-up-enter {
+    opacity: 0;
+    transform: translate3d(0, 2%, 0);
+  }
+
+  .fade-up-enter.fade-up-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all 250ms ease;
+  }
+
+  .fade-up-exit {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .fade-up-exit.fade-up-exit-active {
+    opacity: 0;
+    transform: translate3d(0, 2%, 0);
+    transition: all 250ms ease;
+  }
+
   .react-datepicker {
     position: relative;
     width: 100%;
