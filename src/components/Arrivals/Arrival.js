@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import propTypes from 'prop-types'
 import { Button } from '..'
 import { CheckCircle } from 'react-feather'
@@ -56,13 +56,17 @@ const Arrival = ({ arrival, dismiss, print }) => {
     vehicle_id,
     arrival_info,
   } = arrival
+  const [printed, setPrinted] = useState(false)
   const vehicle = `${vehicle_color || ''} ${vehicle_type || ''}`
   const { first_name, last_name } = customer || {}
   const customerName = first_name ? `${first_name} ${last_name}` : null
 
   useEffect(() => {
-    if (print) print()
-  }, [print])
+    if (print && !printed) {
+      print()
+      setPrinted(true)
+    }
+  }, [print, printed])
 
   return (
     <ArrivalContainer>
