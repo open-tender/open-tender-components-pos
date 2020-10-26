@@ -18,18 +18,19 @@ const RowHeaderContainer = styled('div')`
   flex: 0 0 28rem;
   min-width: 28rem;
   overflow: hidden;
-  padding: 2rem 0.5rem 2rem 3rem;
-  padding-right: 0.5rem;
+  padding: 1.5rem 0.5rem 1.5rem ${(props) => props.theme.layout.paddingSmall};
   background-color: ${(props) => props.headerColor || props.theme.colors.bg1};
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
 
 const RowContentContainer = styled('div')`
   flex: 1 0 0;
-  padding: 0 ${(props) => props.theme.layout.paddingSmall};
+  padding: ${(props) => props.theme.layout.paddingSmall};
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem 3rem;
 `
 
 const Row = ({

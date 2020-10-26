@@ -105,4 +105,5 @@ OrderButtons.propTypes = {
   updateOrder: propTypes.func,
   resetOrder: propTypes.func,
 }
+
 export default OrderButtons

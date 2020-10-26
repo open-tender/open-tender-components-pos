@@ -19,8 +19,12 @@ const ErrorMessageContainer = styled('div')`
 
   ul li {
     font-family: ${(props) => props.theme.fonts.mono.fontFamily};
-    font-size: ${(props) => props.theme.fonts.sizes.small};
+    font-size: ${(props) => props.theme.fonts.sizes.medium};
   }
+`
+
+const ErrorMessageContact = styled('p')`
+  font-size: ${(props) => props.theme.fonts.sizes.small};
 `
 
 const ErrorMessage = ({ error }) => {
@@ -44,7 +48,9 @@ const ErrorMessage = ({ error }) => {
           })}
         </ul>
       )}
-      <p>Please contact Open Tender Support if this issue persists.</p>
+      <ErrorMessageContact>
+        Please contact Open Tender Support if this issue persists.
+      </ErrorMessageContact>
     </ErrorMessageContainer>
   ) : null
 }

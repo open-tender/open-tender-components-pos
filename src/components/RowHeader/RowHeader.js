@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from '@emotion/styled'
 
 const RowHeaderContainer = styled('div')`
+  width: 100%;
   text-align: left;
 `
 

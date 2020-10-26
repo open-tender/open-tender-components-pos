@@ -16,7 +16,7 @@ const fmtTime = (date, amPm) => {
 
 const OrderTimeContainer = styled('div')`
   flex: 0 0 ${(props) => (props.isOpen ? 'auto' : '8.5rem')};
-  margin: ${(props) => (props.isOpen ? '0 0 0 3rem' : '0')};
+  margin: ${(props) => (props.isOpen ? '0 0 0 5rem' : '0')};
   text-align: right;
 `
 
