@@ -15,12 +15,13 @@ const OrderTicketsContainer = styled('div')`
 const OrderTicket = styled('div')`
   position: relative;
   padding: 0 0 1.5rem;
-  // border-bottom: 0.1rem solid ${(props) => props.theme.colors.border};
   margin: ${(props) => props.theme.layout.paddingSmall} 0 0;
   ${(props) => props.flexChild}
 
   &:last-child {
-    border-bottom: 0;
+    div.order-line {
+      display: none;
+    }
   }
 `
 
@@ -133,17 +134,16 @@ const OrderTickets = ({
   const { tickets, cart, fulfillment } = order
   const vehicle = makeVehicle(fulfillment)
   const groups = makeTicketGroups(tickets, cart, itemTypesMap, isAssembly)
-  const displayedCount = groups.filter((i) => i.length).length
+
   const flex = isOpen ? `display: flex; flex-wrap: wrap;` : null
   const flexChild = isOpen ? `flex: 0 0 33.33333%; display: flex;` : null
   return (
     <>
       {vehicle && <OrderFulfillment>Curbside: {vehicle}</OrderFulfillment>}
       <OrderTicketsContainer style={style} flex={flex}>
-        {groups.map((group, groupIndex) =>
+        {groups.map((group) =>
           group.map((ticket, index) => {
             const { item_type_name, items } = ticket
-            const showLine = isOpen || groupIndex + 1 !== displayedCount
             return (
               <OrderTicket key={ticket.ticket_no} flexChild={flexChild}>
                 <OrderTicketButtons
@@ -158,7 +158,7 @@ const OrderTickets = ({
                   refreshCompletedOrders={refreshCompletedOrders}
                   showNotification={showNotification}
                 />
-                <OrderTicketLine />
+                <OrderTicketLine className={isOpen ? '' : 'order-line'} />
                 {ticket.is_grouped ? (
                   <OrderTicketItem>
                     <OrderTicketItemHeader>

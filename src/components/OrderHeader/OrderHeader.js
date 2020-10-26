@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import { makeChannelName, formatDollars } from '@open-tender/js'
 import styled from '@emotion/styled'
-import { InfoList } from '..'
+import { InfoList, OrderPromised } from '..'
 import { OrderExpand } from '.'
 
 const OrderHeaderContainer = styled('div')`
@@ -52,7 +52,8 @@ const OrderHeader = ({
   isOpen = false,
   openOrder,
   closeOrder,
-  children,
+  warningMinutes,
+  alertMinutes,
   style = null,
 }) => {
   const { customer, channel, daily_id, order_id, totals } = order
@@ -79,7 +80,13 @@ const OrderHeader = ({
           <InfoList items={orderNos} />
         </OrderHeaderNumbers>
       </OrderHeaderDetails>
-      <div>{children}</div>
+      <OrderPromised
+        order={order}
+        isOpen={isOpen}
+        amPm={false}
+        warningMinutes={warningMinutes}
+        alertMinutes={alertMinutes}
+      />
     </OrderHeaderContainer>
   )
 }
@@ -95,6 +102,8 @@ OrderHeader.propTypes = {
   isOpen: propTypes.bool,
   openOrder: propTypes.func,
   closeOrder: propTypes.func,
+  warningMinutes: propTypes.number,
+  alertMinutes: propTypes.number,
 }
 
 export default OrderHeader

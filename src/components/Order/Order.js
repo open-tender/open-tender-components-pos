@@ -9,6 +9,8 @@ const Order = ({
   isPast = false,
   doneOnPrint = false,
   hideDelay = false,
+  warningMinutes = 5,
+  alertMinutes = 10,
   isOpen = false,
   expand = false,
   style = { padding: '0' },
@@ -33,6 +35,8 @@ const Order = ({
           isOpen={isOpen}
           openOrder={openOrder}
           closeOrder={closeOrder}
+          warningMinutes={warningMinutes}
+          alertMinutes={alertMinutes}
         />
       }
       main={
@@ -76,6 +80,8 @@ Order.propTypes = {
   isPast: propTypes.bool,
   doneOnPrint: propTypes.bool,
   hideDelay: propTypes.bool,
+  warningMinutes: propTypes.number,
+  alertMinutes: propTypes.number,
   isOpen: propTypes.bool,
   expand: propTypes.bool,
   style: propTypes.object,

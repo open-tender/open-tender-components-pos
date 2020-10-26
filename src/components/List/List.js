@@ -8,6 +8,7 @@ import {
   makeTicketCounts,
   orderTypeNamesMap,
   formatTimeList,
+  timezoneMap,
 } from '@open-tender/js'
 import { Row, RowHeader, RowTable } from '..'
 import { Maximize2 } from 'react-feather'
@@ -121,7 +122,17 @@ const makeHeaders = (itemTypes) => {
 
 const widths = ['11.5%', '11.5%', '9%', '9%', '9%', '20%', '15%', '15%']
 
-const List = ({ orders = [], itemTypes, tz }) => {
+const List = ({
+  orders = [],
+  itemTypes = [],
+  isAssembly = false,
+  isPast = false,
+  doneOnPrint = false,
+  hideDelay = false,
+  warningMinutes = 5,
+  alertMinutes = 10,
+  actions = {},
+}) => {
   const headers = makeHeaders(itemTypes)
   const expand = (evt, order) => {
     evt.target.blur()
@@ -140,7 +151,9 @@ const List = ({ orders = [], itemTypes, tz }) => {
             channel,
             cart,
             receipt_type,
+            timezone,
           } = order
+          const tz = timezoneMap[timezone]
           const orderType = order_type === 'MAIN_MENU' ? 'OLO' : order_type
           const orderId = order_id ? `#${order_id}` : 'N/A'
           const cartCount = cart.reduce((t, i) => t + i.quantity, 0)

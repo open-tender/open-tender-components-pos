@@ -27,6 +27,8 @@ const Grid = ({
   isPast = false,
   doneOnPrint = false,
   hideDelay = false,
+  warningMinutes = 5,
+  alertMinutes = 10,
   actions = {},
 }) => {
   return (
@@ -46,6 +48,8 @@ const Grid = ({
                 isPast={isPast}
                 doneOnPrint={doneOnPrint}
                 hideDelay={hideDelay}
+                warningMinutes={warningMinutes}
+                alertMinutes={alertMinutes}
                 {...actions}
               />
             </Box>
@@ -64,6 +68,8 @@ Grid.propTypes = {
   isPast: propTypes.bool,
   doneOnPrint: propTypes.bool,
   hideDelay: propTypes.bool,
+  warningMinutes: propTypes.number,
+  alertMinutes: propTypes.number,
   actions: propTypes.object,
 }
 
