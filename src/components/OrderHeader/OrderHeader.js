@@ -10,6 +10,7 @@ const OrderHeaderContainer = styled('div')`
   justify-content: space-between;
   align-items: flex-end;
   text-align: left;
+  padding: ${(props) => props.theme.layout.paddingSmall};
 `
 
 const OrderHeaderDetails = styled('div')`

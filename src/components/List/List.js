@@ -14,7 +14,10 @@ import { Maximize2 } from 'react-feather'
 import { InfoList } from '../InfoList'
 
 const ListContainer = styled('div')`
-  padding: 0 0 ${(props) => props.theme.layout.paddingSmall};
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 ${(props) => props.theme.layout.paddingSmall} 0 0;
 `
 
 const RowContainer = styled('div')`

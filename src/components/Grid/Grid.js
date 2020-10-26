@@ -20,7 +20,15 @@ const Box = styled('div')`
     ${(props) => props.theme.layout.paddingSmall} 0;
 `
 
-const Grid = ({ orders = [] }) => {
+const Grid = ({
+  orders = [],
+  itemTypes = [],
+  isAssembly = false,
+  isPast = false,
+  doneOnPrint = false,
+  hideDelay = false,
+  actions = {},
+}) => {
   return (
     <GridContainer>
       <TransitionGroup component={null}>
@@ -31,7 +39,15 @@ const Grid = ({ orders = [] }) => {
             timeout={250}
           >
             <Box>
-              <Order order={order} />
+              <Order
+                order={order}
+                itemTypes={itemTypes}
+                isAssembly={isAssembly}
+                isPast={isPast}
+                doneOnPrint={doneOnPrint}
+                hideDelay={hideDelay}
+                {...actions}
+              />
             </Box>
           </CSSTransition>
         ))}
@@ -43,6 +59,12 @@ const Grid = ({ orders = [] }) => {
 Grid.displayName = 'Grid'
 Grid.propTypes = {
   orders: propTypes.array,
+  itemTypes: propTypes.array,
+  isAssembly: propTypes.bool,
+  isPast: propTypes.bool,
+  doneOnPrint: propTypes.bool,
+  hideDelay: propTypes.bool,
+  actions: propTypes.object,
 }
 
 export default Grid

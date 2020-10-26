@@ -8,6 +8,7 @@ import { OrderTicketButtons } from '.'
 
 const OrderTicketsContainer = styled('div')`
   text-align: left;
+  padding-left: ${(props) => props.theme.layout.paddingSmall};
   ${(props) => props.flex}
 `
 
@@ -100,7 +101,8 @@ const OrderTicketModifiersOptionName = styled('span')`
 `
 
 const OrderFulfillment = styled('div')`
-  padding: ${(props) => props.theme.layout.paddingSmall} 0 0;
+  padding: ${(props) => props.theme.layout.paddingSmall};
+  padding-bottom: 0;
   color: ${(props) => props.theme.colors.alert};
 `
 
@@ -156,7 +158,7 @@ const OrderTickets = ({
                   refreshCompletedOrders={refreshCompletedOrders}
                   showNotification={showNotification}
                 />
-                {showLine && <OrderTicketLine />}
+                <OrderTicketLine />
                 {ticket.is_grouped ? (
                   <OrderTicketItem>
                     <OrderTicketItemHeader>

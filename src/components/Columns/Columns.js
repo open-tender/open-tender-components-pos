@@ -7,8 +7,7 @@ import { Order } from '..'
 const ColumnsContainer = styled('div')`
   width: 100%;
   height: 100%;
-  padding: 0 0 ${(props) => props.theme.layout.paddingSmall}
-    ${(props) => props.theme.layout.paddingSmall};
+  padding: 0 0 ${(props) => props.theme.layout.paddingSmall};
   overflow-x: scroll;
   display: flex;
   justify-content: flex-start;
@@ -25,10 +24,11 @@ const Column = styled('div')`
 const Columns = ({
   orders = [],
   itemTypes = [],
-  actions = {},
   isAssembly = false,
   isPast = false,
   doneOnPrint = false,
+  hideDelay = false,
+  actions = {},
 }) => {
   return (
     <ColumnsContainer>
@@ -46,6 +46,7 @@ const Columns = ({
                 isAssembly={isAssembly}
                 isPast={isPast}
                 doneOnPrint={doneOnPrint}
+                hideDelay={hideDelay}
                 {...actions}
               />
             </Column>
@@ -60,10 +61,11 @@ Columns.displayName = 'Columns'
 Columns.propTypes = {
   orders: propTypes.array,
   itemTypes: propTypes.array,
-  actions: propTypes.object,
   isAssembly: propTypes.bool,
   isPast: propTypes.bool,
   doneOnPrint: propTypes.bool,
+  hideDelay: propTypes.bool,
+  actions: propTypes.object,
 }
 
 export default Columns

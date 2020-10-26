@@ -8,6 +8,7 @@ const Order = ({
   isAssembly = false,
   isPast = false,
   doneOnPrint = false,
+  hideDelay = false,
   isOpen = false,
   expand = false,
   style = { padding: '0' },
@@ -21,6 +22,8 @@ const Order = ({
   printTickets,
   updateOrder,
   resetOrder,
+  delayOrder,
+  fireOrder,
 }) => {
   return (
     <Card
@@ -47,18 +50,19 @@ const Order = ({
           showNotification={showNotification}
         />
       }
-      mainStyle={{ paddingRight: '0' }}
       footer={
         <OrderFooter
           order={order}
           doneOnPrint={doneOnPrint}
+          hideDelay={hideDelay}
           printReceipt={printReceipt}
           printTickets={printTickets}
           updateOrder={updateOrder}
           resetOrder={resetOrder}
+          delayOrder={delayOrder}
+          fireOrder={fireOrder}
         />
       }
-      footerStyle={{ paddingRight: '0' }}
       style={style}
     />
   )
@@ -71,6 +75,7 @@ Order.propTypes = {
   isAssembly: propTypes.bool,
   isPast: propTypes.bool,
   doneOnPrint: propTypes.bool,
+  hideDelay: propTypes.bool,
   isOpen: propTypes.bool,
   expand: propTypes.bool,
   style: propTypes.object,
@@ -84,6 +89,8 @@ Order.propTypes = {
   printTickets: propTypes.func,
   updateOrder: propTypes.func,
   resetOrder: propTypes.func,
+  delayOrder: propTypes.func,
+  fireOrder: propTypes.func,
 }
 
 export default Order
