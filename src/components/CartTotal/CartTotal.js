@@ -9,6 +9,7 @@ const CartTotalContainer = styled('div')`
   font-weight: 500;
   font-size: ${(props) => props.theme.fonts.sizes[props.size]};
   color: ${(props) => props.theme.colors[props.color]};
+  padding: ${(props) => props.theme.layout.paddingSmall};
 `
 
 const CartTotalLine = styled('div')`

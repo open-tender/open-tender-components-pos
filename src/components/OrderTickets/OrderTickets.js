@@ -123,6 +123,7 @@ const OrderTickets = ({
   doneOnPrint = false,
   expand = true,
   style = null,
+  showButtons = true,
   openOrder,
   closeOrder,
   printTicket,
@@ -146,18 +147,20 @@ const OrderTickets = ({
             const { item_type_name, items } = ticket
             return (
               <OrderTicket key={ticket.ticket_no} flexChild={flexChild}>
-                <OrderTicketButtons
-                  order={order}
-                  ticket={ticket}
-                  isPast={isPast}
-                  doneOnPrint={doneOnPrint}
-                  openOrder={openOrder}
-                  closeOrder={closeOrder}
-                  printTicket={printTicket}
-                  updateTicket={updateTicket}
-                  refreshCompletedOrders={refreshCompletedOrders}
-                  showNotification={showNotification}
-                />
+                {showButtons && (
+                  <OrderTicketButtons
+                    order={order}
+                    ticket={ticket}
+                    isPast={isPast}
+                    doneOnPrint={doneOnPrint}
+                    openOrder={openOrder}
+                    closeOrder={closeOrder}
+                    printTicket={printTicket}
+                    updateTicket={updateTicket}
+                    refreshCompletedOrders={refreshCompletedOrders}
+                    showNotification={showNotification}
+                  />
+                )}
                 <OrderTicketLine className={isOpen ? '' : 'order-line'} />
                 {ticket.is_grouped ? (
                   <OrderTicketItem>
@@ -262,10 +265,7 @@ OrderTickets.propTypes = {
   isPast: propTypes.bool,
   doneOnPrint: propTypes.bool,
   expand: propTypes.bool,
-  children: propTypes.oneOfType([
-    propTypes.arrayOf(propTypes.node),
-    propTypes.node,
-  ]),
+  showButtons: propTypes.bool,
   style: propTypes.object,
   openOrder: propTypes.func,
   closeOrder: propTypes.func,
