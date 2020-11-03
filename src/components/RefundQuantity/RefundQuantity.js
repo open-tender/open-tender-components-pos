@@ -21,9 +21,11 @@ const RefundQuantityContainer = styled('div')`
 const RefundQuantityCount = styled('div')`
   flex-grow: 1;
   text-align: center;
+  opacity: ${(props) => (props.disabled ? '0.25' : '1.0')};
 `
 
 const RefundQuantity = ({ quantity, refundQuantity, increment, decrement }) => {
+  const fullyRefunded = refundQuantity >= quantity
   return (
     <RefundQuantityContainer>
       <Button
@@ -34,12 +36,14 @@ const RefundQuantity = ({ quantity, refundQuantity, increment, decrement }) => {
       >
         <Minus size={18} />
       </Button>
-      <RefundQuantityCount>{refundQuantity}</RefundQuantityCount>
+      <RefundQuantityCount disabled={fullyRefunded}>
+        {refundQuantity}
+      </RefundQuantityCount>
       <Button
         onClick={increment}
         label="Add one"
         color="active"
-        disabled={refundQuantity >= quantity}
+        disabled={fullyRefunded}
       >
         <Plus size={18} />
       </Button>

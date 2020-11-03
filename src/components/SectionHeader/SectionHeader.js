@@ -27,7 +27,7 @@ const SectionHeader = ({ title, subtitle }) => {
 SectionHeader.displayName = 'SectionHeader'
 SectionHeader.propTypes = {
   title: propTypes.string,
-  subtitle: propTypes.string,
+  subtitle: propTypes.oneOfType([propTypes.string, propTypes.element]),
 }
 
 export default SectionHeader
