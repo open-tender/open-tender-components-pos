@@ -60,13 +60,15 @@ const Arrival = ({ arrival, dismiss, print }) => {
   const vehicle = `${vehicle_color || ''} ${vehicle_type || ''}`
   const { first_name, last_name } = customer || {}
   const customerName = first_name ? `${first_name} ${last_name}` : null
+  const [alert] = useState(new Audio('/horn.mp3'))
 
   useEffect(() => {
     if (print && !printed) {
       print()
+      if (alert) alert.play()
       setPrinted(true)
     }
-  }, [print, printed])
+  }, [print, printed, alert])
 
   return (
     <ArrivalContainer>
