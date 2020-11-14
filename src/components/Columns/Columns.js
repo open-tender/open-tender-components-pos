@@ -51,6 +51,7 @@ const Columns = ({
                 hideDelay={hideDelay}
                 warningMinutes={warningMinutes}
                 alertMinutes={alertMinutes}
+                noScrollable={true}
                 {...actions}
               />
             </Column>

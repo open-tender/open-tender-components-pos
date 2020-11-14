@@ -50,6 +50,8 @@ const Grid = ({
                 hideDelay={hideDelay}
                 warningMinutes={warningMinutes}
                 alertMinutes={alertMinutes}
+                noScrollable={true}
+                compactHeader={true}
                 {...actions}
               />
             </Box>

@@ -26,16 +26,21 @@ const OrderHeaderCustomer = styled('h2')`
   margin: 0 0 0.6rem -0.04em;
   line-height: 1.2;
   ${(props) => props.theme.ellipsis}
+  ${(props) => props.compact && `font-size: ${props.theme.fonts.sizes.h3};`}
+  ${(props) => props.compact && 'margin-bottom: 0.3rem;'}
 `
 
 const OrderHeaderNo = styled('span')`
   padding: 0 1rem 0 0;
   ${(props) => props.theme.fonts.headingsStyle}
-  font-size: ${(props) => props.theme.fonts.sizes.xlarge};
+  font-size: ${(props) =>
+    props.compact
+      ? props.theme.fonts.sizes.medium
+      : props.theme.fonts.sizes.xlarge};
 `
 
 const OrderHeaderNumbers = styled('div')`
-  margin: 1.1rem 0 0;
+  margin: ${(props) => (props.compact ? '0.6rem 0 0' : '1.1rem 0 0')};
 
   & div {
     display: inline-block;
@@ -55,6 +60,7 @@ const OrderHeader = ({
   warningMinutes,
   alertMinutes,
   style = null,
+  compact = false,
 }) => {
   const { customer, channel, daily_id, order_id, totals } = order
   const channelName = makeChannelName(channel)
@@ -73,10 +79,12 @@ const OrderHeader = ({
         closeOrder={closeOrder}
       />
       <OrderHeaderDetails>
-        <OrderHeaderCustomer>{customerName}</OrderHeaderCustomer>
+        <OrderHeaderCustomer compact={compact}>
+          {customerName}
+        </OrderHeaderCustomer>
         <InfoList items={phone ? [channelName, phone] : [channelName]} />
-        <OrderHeaderNumbers>
-          <OrderHeaderNo>#{daily_id}</OrderHeaderNo>
+        <OrderHeaderNumbers compact={compact}>
+          <OrderHeaderNo compact={compact}>#{daily_id}</OrderHeaderNo>
           <InfoList items={orderNos} />
         </OrderHeaderNumbers>
       </OrderHeaderDetails>
@@ -104,6 +112,7 @@ OrderHeader.propTypes = {
   closeOrder: propTypes.func,
   warningMinutes: propTypes.number,
   alertMinutes: propTypes.number,
+  compact: propTypes.bool,
 }
 
 export default OrderHeader

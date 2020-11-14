@@ -13,6 +13,8 @@ const Order = ({
   alertMinutes = 10,
   isOpen = false,
   expand = false,
+  noScrollable = false,
+  compactHeader = false,
   style = { padding: '0' },
   openOrder,
   closeOrder,
@@ -37,6 +39,7 @@ const Order = ({
           closeOrder={closeOrder}
           warningMinutes={warningMinutes}
           alertMinutes={alertMinutes}
+          compact={compactHeader}
         />
       }
       main={
@@ -68,6 +71,7 @@ const Order = ({
         />
       }
       style={style}
+      noScrollable={noScrollable}
     />
   )
 }
@@ -84,6 +88,8 @@ Order.propTypes = {
   alertMinutes: propTypes.number,
   isOpen: propTypes.bool,
   expand: propTypes.bool,
+  noScrollable: propTypes.bool,
+  compactHeader: propTypes.bool,
   style: propTypes.object,
   openOrder: propTypes.func,
   closeOrder: propTypes.func,

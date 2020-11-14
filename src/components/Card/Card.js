@@ -31,7 +31,8 @@ const CardHeader = styled('div')`
 const CardMain = styled('div')`
   width: 100%;
   flex-grow: 1;
-  overflow: hidden;
+  ${(props) =>
+    props.noScrollable ? 'overflow-y: scroll' : 'overflow: hidden'};
 `
 
 const CardFooter = styled('div')`
@@ -40,13 +41,13 @@ const CardFooter = styled('div')`
   flex-grow: 0;
 `
 
-const Card = ({ header, main, footer, style = null }) => {
+const Card = ({ header, main, footer, style = null, noScrollable = false }) => {
   return (
     <CardContainer style={style}>
       <CardContent>
         <CardHeader>{header}</CardHeader>
-        <CardMain>
-          <Scrollable>{main}</Scrollable>
+        <CardMain noScrollable={noScrollable}>
+          {noScrollable ? main : <Scrollable>{main}</Scrollable>}
         </CardMain>
         <CardFooter>{footer}</CardFooter>
       </CardContent>
@@ -60,6 +61,7 @@ Card.propTypes = {
   main: propTypes.node,
   footer: propTypes.node,
   style: propTypes.object,
+  noScrollable: propTypes.bool,
 }
 
 export default Card
