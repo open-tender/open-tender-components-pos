@@ -12,6 +12,9 @@ const makeGlobalStyles = (theme) => css`
     font-size: 62.5%;
     font-family: sans-serif;
     min-height: 100%;
+    @media (max-width: 1366px) {
+      font-size: 50%;
+    }
   }
 
   *,

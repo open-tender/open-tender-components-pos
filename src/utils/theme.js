@@ -56,6 +56,7 @@ export const theme = {
     sidebarNarrowWidth: '16rem',
     sidebarWidth: '30rem',
     cardWidth: '48rem',
+    cardWidthTablet: '360px',
     gutter: '0.5rem',
     bigButtonHeight: '7rem',
   },
