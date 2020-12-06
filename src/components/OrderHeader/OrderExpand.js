@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { Maximize2, Minimize2 } from 'react-feather'
-import { Button } from '..'
+import { Button, Icon } from '..'
 import styled from '@emotion/styled'
 
 const OrderExpandContainer = styled('div')`
@@ -23,11 +23,15 @@ const OrderExpand = ({ order, isOpen = false, openOrder, closeOrder }) => {
     <OrderExpandContainer>
       {isOpen ? (
         <Button onClick={closeOrder}>
-          <Minimize2 size={20} />
+          <Icon width="2.0rem" height="2.0rem">
+            <Minimize2 size={20} />
+          </Icon>
         </Button>
       ) : (
         <Button onClick={() => openOrder(order)}>
-          <Maximize2 size={20} />
+          <Icon width="2.0rem" height="2.0rem">
+            <Maximize2 size={20} />
+          </Icon>
         </Button>
       )}
     </OrderExpandContainer>

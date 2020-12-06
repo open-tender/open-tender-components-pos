@@ -8,7 +8,7 @@ import {
   currentLocalDate,
   notDone,
 } from '@open-tender/js'
-import { Button } from '..'
+import { Button, Icon } from '..'
 import styled from '@emotion/styled'
 
 const OrderButtonsContainer = styled('div')`
@@ -45,7 +45,6 @@ const OrderButtons = ({
   const fireDate = isoToDate(fire_at, tz)
   const currentDate = currentLocalDate(tz)
   const isFuture = fireDate > currentDate
-  const size = 20
 
   const update = () => {
     isNotDone
@@ -66,7 +65,9 @@ const OrderButtons = ({
           color={prep_status === prepStatus.TODO ? 'icon' : 'iconDead'}
           onClick={() => printReceipt(order_uuid)}
         >
-          <FileText size={size} />
+          <Icon width="2.0rem" height="2.0rem">
+            <FileText size={20} />
+          </Icon>
         </Button>
       )}
       {!isFuture && (
@@ -74,12 +75,16 @@ const OrderButtons = ({
           color={prep_status === prepStatus.TODO ? 'icon' : 'iconDead'}
           onClick={() => printTickets(order_uuid)}
         >
-          <Printer size={size} />
+          <Icon width="2.0rem" height="2.0rem">
+            <Printer size={20} />
+          </Icon>
         </Button>
       )}
       {!doneOnPrint ? (
         <Button color={isNotDone ? 'icon' : 'iconSuccess'} onClick={update}>
-          <CheckCircle size={size} />
+          <Icon width="2.0rem" height="2.0rem">
+            <CheckCircle size={20} />
+          </Icon>
         </Button>
       ) : (
         !isNotDone && (
@@ -88,7 +93,9 @@ const OrderButtons = ({
             onClick={complete}
             disabled={incompleteTickets}
           >
-            <CheckCircle size={size} />
+            <Icon width="2.0rem" height="2.0rem">
+              <CheckCircle size={20} />
+            </Icon>
           </Button>
         )
       )}

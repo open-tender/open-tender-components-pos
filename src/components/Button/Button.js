@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from '@emotion/styled'
+import { Icon } from '..'
 
 const ButtonStyled = styled('button')`
   cursor: pointer;
@@ -36,6 +37,7 @@ const Button = ({
   children,
   disabled,
   onClick,
+  isIcon = false,
   size = 'medium',
   color = 'primary',
   style = null,
@@ -53,11 +55,12 @@ const Button = ({
       aria-label={label || text || null}
       onPointerUp={(evt) => onUp(evt)}
       disabled={disabled}
+      isIcon={isIcon}
       size={size}
       color={color}
       style={style}
     >
-      <span>{children || text}</span>
+      {isIcon ? <Icon>{children}</Icon> : <span>{children || text}</span>}
     </ButtonStyled>
   )
 }
@@ -72,6 +75,7 @@ Button.propTypes = {
   ]),
   disabled: propTypes.bool,
   onClick: propTypes.func,
+  isIcon: propTypes.bool,
   size: propTypes.string,
   color: propTypes.string,
   style: propTypes.object,

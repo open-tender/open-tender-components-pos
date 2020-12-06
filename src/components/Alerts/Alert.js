@@ -26,7 +26,7 @@ const AlertContainer = styled('li')`
 const AlertIcon = styled('span')`
   position: relative;
   top: 0rem;
-  display: inline-block;
+  display: block;
   width: 2rem;
   height: 2rem;
   margin: 0 0 0 1rem;

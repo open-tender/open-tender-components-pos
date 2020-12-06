@@ -65,6 +65,7 @@ export const Icons = () => (
           key={i.label}
           label={i.label}
           color={i.color}
+          isIcon={true}
           onClick={() => console.log(`Clicked!`)}
         >
           {i.icon}

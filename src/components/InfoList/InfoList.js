@@ -14,14 +14,33 @@ const InfoListItem = styled('li')`
   }
 `
 
+const InfoListContainer = styled('ul')`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  li {
+    display: block;
+    line-height: 1;
+    padding: 0 0 0 0.6rem;
+    border-left: 0.1rem solid ${(props) => props.theme.colors.border};
+    margin: 0 0 0 0.6rem;
+    &:first-of-type {
+      padding: 0;
+      border: 0;
+      margin: 0;
+    }
+  }
+`
+
 const InFoList = ({ items }) => {
   return (
     <div>
-      <ul>
+      <InfoListContainer>
         {items.map((item, index) => (
-          <InfoListItem key={`info-${index}`}>{item}</InfoListItem>
+          <li key={`info-${index}`}>{item}</li>
         ))}
-      </ul>
+      </InfoListContainer>
     </div>
   )
 }

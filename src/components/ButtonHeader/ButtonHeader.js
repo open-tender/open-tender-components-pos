@@ -11,6 +11,7 @@ const ButtonHeader = ({
   text,
   label,
   disabled,
+  isIcon = false,
   children,
 }) => {
   const buttonStyle = { ...defaultStyle, ...style }
@@ -23,6 +24,7 @@ const ButtonHeader = ({
       text={text}
       label={text || label}
       disabled={disabled}
+      isIcon={isIcon}
     >
       {text || children}
     </Button>
@@ -37,6 +39,7 @@ ButtonHeader.propTypes = {
   text: propTypes.string,
   label: propTypes.string,
   disabled: propTypes.bool,
+  isIcon: propTypes.bool,
   children: propTypes.oneOfType([
     propTypes.arrayOf(propTypes.node),
     propTypes.node,

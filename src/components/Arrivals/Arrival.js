@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import propTypes from 'prop-types'
-import { Button } from '..'
+import { Button, Icon } from '..'
 import { CheckCircle } from 'react-feather'
 import styled from '@emotion/styled'
 
@@ -80,7 +80,9 @@ const Arrival = ({ arrival, dismiss, print }) => {
       <ArrivalInfo>{arrival_info}</ArrivalInfo>
       <ArrivalDismiss>
         <Button label="Dismiss" onClick={dismiss} color="darkText">
-          <CheckCircle size={20} />
+          <Icon width="2.0rem" height="2.0rem">
+            <CheckCircle size={20} />
+          </Icon>
         </Button>
       </ArrivalDismiss>
     </ArrivalContainer>

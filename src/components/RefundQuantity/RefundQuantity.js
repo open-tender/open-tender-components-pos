@@ -33,6 +33,7 @@ const RefundQuantity = ({ quantity, refundQuantity, increment, decrement }) => {
         label="Remove one"
         color="active"
         disabled={refundQuantity === 0}
+        isIcon={true}
       >
         <Minus size={18} />
       </Button>
@@ -44,6 +45,7 @@ const RefundQuantity = ({ quantity, refundQuantity, increment, decrement }) => {
         label="Add one"
         color="active"
         disabled={fullyRefunded}
+        isIcon={true}
       >
         <Plus size={18} />
       </Button>

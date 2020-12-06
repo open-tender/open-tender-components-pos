@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { Printer, CheckCircle } from 'react-feather'
-import { Button } from '..'
+import { Button, Icon } from '..'
 import {
   prepStatus,
   isoToDate,
@@ -43,7 +43,6 @@ const OrderTicketButtons = ({
   const fireDate = isoToDate(fire_at, tz)
   const currentDate = currentLocalDate(tz)
   const isFuture = fireDate > currentDate
-  const size = 20
 
   const print = () => {
     printTicket(order_uuid, ticket_no)
@@ -78,7 +77,9 @@ const OrderTicketButtons = ({
           color={ticket_status === prepStatus.TODO ? 'icon' : 'iconDead'}
           onClick={print}
         >
-          <Printer size={size} />
+          <Icon width="2.0rem" height="2.0rem">
+            <Printer size={20} />
+          </Icon>
         </Button>
       )}
       {!doneOnPrint ? (
@@ -86,7 +87,9 @@ const OrderTicketButtons = ({
           color={isDone(ticket_status) ? 'iconSuccess' : 'icon'}
           onClick={update}
         >
-          <CheckCircle size={size} />
+          <Icon width="2.0rem" height="2.0rem">
+            <CheckCircle size={20} />
+          </Icon>
         </Button>
       ) : (
         orderIsDone && (
@@ -94,7 +97,9 @@ const OrderTicketButtons = ({
             color={isCompleted ? 'iconSuccess' : 'icon'}
             onClick={complete}
           >
-            <CheckCircle size={size} />
+            <Icon width="2.0rem" height="2.0rem">
+              <CheckCircle size={20} />
+            </Icon>
           </Button>
         )
       )}

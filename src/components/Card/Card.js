@@ -5,9 +5,9 @@ import { Scrollable } from '../Scrollable'
 
 const CardContainer = styled('div')`
   flex: 0 0 ${(props) => props.theme.layout.cardWidth};
-  @media (max-width: 1366px) {
-    max-width: ${(props) => props.theme.layout.cardWidthTablet};
-  }
+  // @media (max-width: 1366px) {
+  //   max-width: ${(props) => props.theme.layout.cardWidthTablet};
+  // }
   height: 100%;
   padding: 0 0 ${(props) => props.theme.layout.padding};
 `
