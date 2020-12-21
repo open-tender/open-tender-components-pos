@@ -23,13 +23,22 @@ const Logo = styled('div')`
   }
 `
 
-const LoadingLogo = ({ logo }) => {
+const tagline = 'an open platform for restaurant innovation'
+
+const LoadingMsg = () => (
+  <>
+    <p>Starting up. Please do not reload the page.</p>
+    <p>This could take up to 60 seconds.</p>
+  </>
+)
+
+const LoadingLogo = ({ logo, isLoading = false }) => {
   return (
     <FlexCentered>
       <Greeting>
         <Logo>
           <img src={logo} className="logo" alt="logo" />
-          <code>an open platform for restaurant innovation</code>
+          <code>{isLoading ? <LoadingMsg /> : tagline}</code>
         </Logo>
         <Loading />
       </Greeting>
@@ -40,5 +49,6 @@ const LoadingLogo = ({ logo }) => {
 LoadingLogo.displayName = 'LoadingLogo'
 LoadingLogo.propTypes = {
   logo: propTypes.node,
+  isLoading: propTypes.bool,
 }
 export default LoadingLogo
