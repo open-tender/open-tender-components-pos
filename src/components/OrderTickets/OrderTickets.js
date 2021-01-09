@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { AlertTriangle } from 'react-feather'
 import { Preface } from '..'
 import { OrderTicketButtons } from '.'
+import OrderTicketDetails from './OrderTicketDetails'
 
 const OrderTicketsContainer = styled('div')`
   text-align: left;
@@ -132,7 +133,7 @@ const OrderTickets = ({
   showNotification,
 }) => {
   const itemTypesMap = makeItemTypesMap(itemTypes)
-  const { tickets, cart, fulfillment } = order
+  const { tickets, cart, fulfillment, details } = order
   const vehicle = makeVehicle(fulfillment)
   const groups = makeTicketGroups(tickets, cart, itemTypesMap, isAssembly)
 
@@ -141,6 +142,7 @@ const OrderTickets = ({
   return (
     <>
       {vehicle && <OrderFulfillment>Curbside: {vehicle}</OrderFulfillment>}
+      <OrderTicketDetails details={details} />
       <OrderTicketsContainer style={style} flex={flex}>
         {groups.map((group) =>
           group.map((ticket, index) => {
