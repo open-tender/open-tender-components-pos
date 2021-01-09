@@ -142,7 +142,7 @@ const OrderTickets = ({
   return (
     <>
       {vehicle && <OrderFulfillment>Curbside: {vehicle}</OrderFulfillment>}
-      <OrderTicketDetails details={details} />
+      <OrderTicketDetails details={details} isAssembly={isAssembly} />
       <OrderTicketsContainer style={style} flex={flex}>
         {groups.map((group) =>
           group.map((ticket, index) => {
