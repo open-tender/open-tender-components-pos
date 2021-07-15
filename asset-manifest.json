@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.30168e74.chunk.css",
+    "main.js": "./main.21be19a4211857df922c.bundle.js",
+    "main.css.map": "./static/css/main.30168e74.chunk.css.map",
+    "main.js.map": "./main.21be19a4211857df922c.bundle.js.map",
+    "runtime~main.js": "./runtime~main.21be19a4211857df922c.bundle.js",
+    "runtime~main.js.map": "./runtime~main.21be19a4211857df922c.bundle.js.map",
+    "vendors~main.js": "./vendors~main.21be19a4211857df922c.bundle.js",
+    "vendors~main.js.map": "./vendors~main.21be19a4211857df922c.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "main.21be19a4211857df922c.bundle.js.LICENSE.txt": "./main.21be19a4211857df922c.bundle.js.LICENSE.txt",
+    "precache-manifest.11f8c97f439c5ba625f628e5faf38c25.js": "./precache-manifest.11f8c97f439c5ba625f628e5faf38c25.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/App.scss": "./static/media/roboto-v20-latin-regular.60fa3c06.woff",
+    "static/media/logo.png": "./static/media/logo.4b68c0ae.png",
+    "vendors~main.21be19a4211857df922c.bundle.js.LICENSE.txt": "./vendors~main.21be19a4211857df922c.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.21be19a4211857df922c.bundle.js",
+    "vendors~main.21be19a4211857df922c.bundle.js",
+    "static/css/main.30168e74.chunk.css",
+    "main.21be19a4211857df922c.bundle.js"
+  ]
+}
