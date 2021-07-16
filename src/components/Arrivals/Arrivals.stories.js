@@ -13,7 +13,7 @@ const Template = (args) => (
   </Sidebar>
 )
 
-const customer = { first_name: 'Jonathan', last_name: 'Doe' }
+const customer = { first_name: 'Jennifer', last_name: 'Doe' }
 
 const arrivals = [
   {
