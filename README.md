@@ -35,7 +35,7 @@ This library provides many of the components used in the Open Tender POS app and
 
 ## Storybook
 
-You can see all the components yourself by checking out our storybook, which can be found here:
+You can find the storybook for all of the available components here:
 
 [@open-tender/components-pos Storybook](https://open-tender.github.io/open-tender-components-pos)
 
@@ -86,6 +86,10 @@ You can see many more examples in the [open-tender-pos](https://github.com/open-
 ## Issues
 
 If you find a bug or have a question, please file an issue on [our issue tracker on GitHub](https://github.com/open-tender/open-tender-components-pos/issues).
+
+## License
+
+[MIT](https://github.com/open-tender/open-tender-components-pos/blob/main/LICENSE.md)
 
 ## About
 
